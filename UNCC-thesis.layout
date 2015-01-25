@@ -1,0 +1,76 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[UNCC-thesis]{article (UNCC-Thesis)}
+ 
+# Input general definitions
+Input stdclass.inc
+Input numreport.inc
+#Input /usr/share/lyx/layouts/book.layout
+
+NoStyle Part
+NoStyle Part*
+
+Counter section
+	within chapter
+End
+
+Style Chapter
+    Align Center
+    Font
+        Shape SmallCaps
+    EndFont
+End
+
+Style Abstract
+	LabelFont
+	  Shape			SmallCaps
+	EndFont
+End
+
+Style Acknowledgements
+	Category              FrontMatter
+	Margin                Static
+	LatexType             Environment
+	LatexName             acknowledgements
+	NextNoIndent          1
+	LeftMargin            MMM
+	RightMargin           MMM
+	ParIndent             MM
+	ParSkip               0
+	ItemSep               0
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0
+	Align                 Block
+	LabelType             Centered_Top_Environment
+	LabelString           "Acknowledgements"
+	LabelBottomSep        0.5
+	Font
+	  Size                Small
+	EndFont
+	LabelFont
+	  Series                Bold
+	  Size                  Large
+	  Shape			SmallCaps
+	EndFont
+	HTMLLabelFirst        1
+	HTMLForceCSS          1
+	HTMLStyle
+		div.abstract {
+			margin: 4ex;
+		}
+		div.abstract_item {
+			font-size: small;
+			padding-top: 1ex;
+		}
+		div.abstract_label {
+			font-weight: bold;
+		}
+	EndHTMLStyle
+	Preamble
+%    \usepackage{mdframed}
+%    \usepackage{xcolor}
+%    \newenvironment{myquotation}
+%      {\begin{mdframed}[linecolor=red]\quotation}
+%      {\endquotation\end{mdframed}}
+	EndPreamble
+End
