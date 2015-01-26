@@ -1182,7 +1182,16 @@ uncctocformat{chapter}{0pt}{350pt}{
 \backslash
 appendixname~
 \backslash
-thecontentslabel:~} 
+thecontentslabel:~}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+chaptertitlename}{APPENDIX} 
 \end_layout
 
 \end_inset
