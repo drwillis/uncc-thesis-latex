@@ -15,7 +15,7 @@ all: $(pdf)
 
 clean: 
 	rm -rf *.aux *.log *.bbl *.blg *.brf *.cb *.ind *.idx *.ilg	\
-				*.inx *.toc *.lof *.lot *.out *.pdf *~
+				*.inx *.toc *.lof *.lot *.out *~
 
 
 
