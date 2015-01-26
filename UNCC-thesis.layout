@@ -4,10 +4,10 @@
 # Input general definitions
 Input stdclass.inc
 Input numreport.inc
-#Input /usr/share/lyx/layouts/book.layout
 
 NoStyle Part
 NoStyle Part*
+NoCounter Part
 
 Counter section
 	within chapter
@@ -74,3 +74,5 @@ Style Acknowledgements
 %      {\endquotation\end{mdframed}}
 	EndPreamble
 End
+
+

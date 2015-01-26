@@ -12,7 +12,7 @@
 
 % Pass all other options to the book class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-
+%\ExecuteOptions{letterpaper,12pt,oneside,onecolumn,final}
 % Process options and we're done with this section
 \ProcessOptions  \relax
 
@@ -89,3 +89,4 @@
 \newcounter{savedstepone}
 \newcounter{savedsteptwo}
 %\newcounter{chapter}
+%\newcounter{appendix}
