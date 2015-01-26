@@ -10,8 +10,8 @@ UNCC-thesis.cls		A UNC Charlotte (UNCC) thesis LaTeX class (.cls) file for use w
 UNCC-thesis.layout	A UNC Charlotte (UNCC) thesis LaTeX layout (.layout) file for use with LyX for writing a thesis.
 msthesis.lyx		An example of a Masters Thesis document which may be used as a template document in the LyX editor.
 msthesis.tex		An example of a Masters Thesis document which may be used as a template document in a LaTeX editor.
-phdthesis.lyx		An example of a Masters Thesis document which may be used as a template document in the LyX editor.
-phdthesis.tex		An example of a Masters Thesis document which may be used as a template document in a LaTeX editor.
+phdthesis.lyx		An example of a Doctoral Thesis document which may be used as a template document in the LyX editor.
+phdthesis.tex		An example of a Doctoral Thesis document which may be used as a template document in a LaTeX editor.
 reference_db.bib	A sample BiBTeX database of references which has one entry for use by the example documents.
 figs/TransVsKLLine.eps 	A sample encapsulated postscript (.eps) figure for use by the example documents.
 figs/TransVsKLLine.pdf 	A sample portable document format (.pdf) figure for use by the example documents.
