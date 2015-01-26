@@ -4,15 +4,12 @@
 \begin_header
 \textclass UNCC-thesis
 \begin_preamble
-% The font can be either 10pt or 12pt to conform to UNCC standards.  Change it here if you like.
-
 % This line decides how deep the Table of Contents will go.  
 % A tocdepth of 1 means it will only show chapters and sections.
 % You can increase it if you want your Table of Contents to show 
 % subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
 \setcounter{tocdepth}{2}
 \end_preamble
-\options oneside
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -34,7 +31,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 12
+\paperfontsize default
 \spacing single
 \use_hyperref false
 \papersize default

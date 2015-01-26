@@ -4,75 +4,12 @@
 \begin_header
 \textclass UNCC-thesis
 \begin_preamble
-% The font can be either 10pt or 12pt to conform to UNCC standards.  Change it here if you like.
-
-%\usepackage{packages/thesis}% This line makes sure that single-line captions won't automatically center. 
-%\usepackage{caption}% Should this move to unccspecs.sty?
-%\captionsetup{singlelinecheck=false}
-
-%%%%%%%%%%%%%%% OPTIONAL PACKAGES YOU MAY WANT TO CONSIDER %%%%%%%%%%%%%%%
-% Uncomment the \usepackage{} command to add the environments to your document. Note that Miktex may need to download the package the first time you add the package, so be patient, especially if you enable a lot of these packages at once.
-
-% Add colors to your text.  Excellent tool for leaving yourself notes. (http://en.wikibooks.org/wiki/LaTeX/Colors)
-%\usepackage{color}
-
-% It supplies a landscape environment, and anything inside is basically rotated. (http://en.wikibooks.org/wiki/LaTeX/Page_Layout)
-%\usepackage{lscape}
-
-% A set of useful symbol fonts (http://www.ctan.org/pkg/ifsym)
-%\usepackage{ifsym}
-
-% supports the creation of indices, like at the end of most books (http://en.wikibooks.org/wiki/LaTeX/Indexing)
-%\usepackage{makeidx}
-
-% Allows the manipulation of graphics (http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics)
-%\usepackage{graphicx}
-
-%         The package alters the command \_ (which normally prints an underscore character or facsimile) so that the hyphenation of constituent words is not affected, and hyphenation is permitted after the underscore. (http://ctan.mirrorcatalogs.com/macros/latex/contrib/underscore/underscore.pdf)
-%\usepackage{underscore}
-
-%  Everything input between the begin and end commands are processed as if by a typewriter (http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting). Useful for adding code blocks/listings
-%\usepackage{verbatim}
-
-%  Used with verbatim to include the source code of any programming language within your document
-%\usepackage{listings}
-
-% Helps format tables using the \toprule, \midrule, and \bottomrule commands (http://en.wikibooks.org/wiki/LaTeX/Tables#Using_booktabs)
-%\usepackage{booktabs}
-
-%  Helps format tables (http://en.wikibooks.org/wiki/LaTeX/Tables#Using_array)
-%\usepackage{array}
-
-% Allows columns spanning multiple rows in the table environment (http://en.wikibooks.org/wiki/LaTeX/Tables)
-%\usepackage{multirow}
-
-% Allows rotating of any object (http://en.wikibooks.org/wiki/LaTeX/Rotations)
-%\usepackage{rotating}
-
-% Allows captions in figures and tables. Especially useful when used with subcaptions if doing subfigures (http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
-%\usepackage{caption}
-
-% Will arrange the figures or tables side-by-side (http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
-%\usepackage{subcaption}
-
-% Balances columns on the last page. Not very useful here, but very useful in scholarly papers to balance your last page (http://www.ctan.org/pkg/flushend)
-%\usepackage{flushend}
-
-% Inserts hypertext markups into document (so digital copies have a table of contents which links to chapters, sections, figures, etc.) (https://www.tug.org/applications/hyperref/manual.html)
-%\usepackage[pdftex]{hyperref}
-
-% Creates a compact list (http://www.howtotex.com/packages/compact-lists-with-paralist/)
-%\usepackage{paralist}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 % This line decides how deep the Table of Contents will go.  
 % A tocdepth of 1 means it will only show chapters and sections.
 % You can increase it if you want your Table of Contents to show 
 % subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
 \setcounter{tocdepth}{2}
 \end_preamble
-\options oneside
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -94,7 +31,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 12
+\paperfontsize default
 \spacing single
 \use_hyperref false
 \papersize default

@@ -1,5 +1,4 @@
-%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This package contains formatting commands for uncc thesis specifications. %
 % It defines the following commands: %
 % 1) \bodychapter - to be used to create chapters in the bodytext. %
@@ -20,9 +19,28 @@
 % Additional corrections added in 2009 by Evan Suma and Rich Nguyen.
 % Search for DOSINGLE in this file to print your thesis single spaced for review purposes added 2013 by Dr. Erin Carroll.
 % Subsubsubsection added in 2013 by Andrew Besmer.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% What formatting elements does this document support?
+% All elements of a UNCC thesis are supported except those items below marked with a '*' 
+% at the beginning of the line.
+%
+% Part I: Preliminary Pages / Frontmatter
+% a) Title Page (required)
+% b) Copyright Page (required)
+% c) Abstract (required)
+%*d) Dedication Page (optional)
+% e) Acknowledgement Page (optional)
+%*f) Introduction Page (optional)
+% g) Table of Contents (required)
+% h) List of Tables (optional)
+% i) List of Figures (optional)
+%*j) List of Symbols/Abbreviations (optional)
+% Part II: Thesis Text (required)
+% Part III: References/Bibliography (required)
+% Part IV: Appendices (optional) 
+%*Part V: Vita (optional) 
+%
 
 % Use this package for double spacing.
 %\usepackage[nodisplayskipstretch]{setspace}
@@ -44,50 +62,45 @@
 %\setlength{\topmargin}{-0.625in}
 
 % Negative value because top margin= \topmargin + 1 inch (orig {-0.625in})
-
-\setlength{\topmargin}{-0.425in}
-
 % Negative value because top margin = \topmargin + 1 inch
-% (The amount .625 = .25 + .375 which accounts thedistance
-% between the top of the pagenumber and the top ofthe header
+% (The amount .625 = .25 + .375 which accounts for the distance
+% between the top of the pagenumber and the top of the header
 % region.)
+\setlength{\topmargin}{-0.425in}
 
 % Make the left margin (from left edge of paper to left edge of body)be 1.5 inches.
 \setlength{\oddsidemargin}{.5in} % Left margin = \oddsidemargin + 1 inch
-\setlength{\evensidemargin}{.5in} % Left margin = \oddsidemargin + 1 inch
 
-% Make the top body margin (from top edge of paper to top of body) be1 inch.
+% Make the top body margin (from top edge of paper to top of body) be 1 inch.
 \setlength{\headheight}{0.25in} % Header height will 1/4 inch.
 %\setlength{\headheight}{0in}
 
+% This is not 0 to correct for the smaller \topmargin.
 %\setlength{\headsep}{0.375in} % \headsep is the distance between topof body and bottom of header. (orig {0.375in})
 \setlength{\headsep}{0.175in} % \headsep is the distance between topof body and bottom of header.
-% This is not 0 to correct for the smaller \topmargin.
 
 % Make the right body margin (from right edge of paper to right edge of body) be 1 inch.
-
-\setlength{\textwidth}{6in}
-
 % Total paper width = 8.5 inches so 6 in.+ 1.5 in. = 7.5 in
 % which leaves 1 inch for the right margin.
+\setlength{\textwidth}{6in}
 
 % Make the bottom body margin (from bottom edge of paper to bottomedge of body) be 1 inch.
-\setlength{\footskip}{0in} % No footer region needed.
-\setlength{\textheight}{9in}
 % Total paper height = 11 inches so 9 in.+ 1 in. = 10 in.
 % which leaves 1 inch for the bottom body margin.
+\setlength{\footskip}{0in} % No footer region needed.
+\setlength{\textheight}{9in}
 
 
 %DOSINGLE Comment next line out  to single space for review purposes
-\doublespacing
 % command from setspace package to invoke doublespacing
+\doublespacing
 
-\pagestyle{myheadings}
 % This makes my own style headings (withpagenumber in upper rt. corner).
+\pagestyle{myheadings}
 
-\markright{}
 % This will put page number in right corner without anyother text in header.
 % (Footer will be blank.)
+\markright{}
 
 % Increase the section number depth and the toc depth (the depth ofsections which get numbered
 % and put in the table of contents). This is necessary to allow thenew titleclasses to be
@@ -690,10 +703,6 @@ ALL RIGHTS RESERVED
 }
 
 % TOC formatting for chapter, section levels
-%\uncctocformat{bodychapter}{0pt}{350pt}{\bodychaptertitlename~\thecontentslabel:~}
-%\uncctocformat{bodysection}{48pt}{302pt}{\contentslabel{2em}}
-%\uncctocformat{bodysubsection}{96pt}{254pt}{\contentslabel{4em}}
-%\uncctocformat{bodysubsubsection}{144pt}{206pt}{\contentslabel{4em}}
 \uncctocformat{chapter}{0pt}{350pt}{\chaptertitlename~\thecontentslabel:~}
 \uncctocformat{section}{48pt}{302pt}{\contentslabel{2em}}
 \uncctocformat{subsection}{96pt}{254pt}{\contentslabel{4em}}
@@ -703,15 +712,6 @@ ALL RIGHTS RESERVED
 % TOC formatting for figure, table
 \uncctocformat{figure}{0pt}{350pt}{\figuretitlename~\thecontentslabel:~}
 \uncctocformat{table}{0pt}{350pt}{\tabletitlename~\thecontentslabel:~}
-
-
-% Command to continue appendix chapter headings correctly when each appendix chapter is contained in a
-% different file. This will be used instead "\appendix" command for all appendix chapters after the 1st.
-% (Using "\appendix" causes each new appendix chapter to be labelled as "A" which is incorrect.)
-%\newcommand{\continueappendixchapterheadings}
-%{\renewcommand{\thechapter}{\Alph{chapter}}
-%\renewcommand*{\chaptertitlename}{Appendix}}
-
 
 % Commands to allow enumerate environment to be used with correct  spacing for uncc requirements.
 \setlength{\parindent}{.17in} % Set the paragraph's indent to match the indent of the enumerate environment.
@@ -754,6 +754,7 @@ ALL RIGHTS RESERVED
 }
 
 \newcommand{\listofcontentsfigurestables}{
+\let\cleardoublepage\clearpage
 \lefthyphenmin=2
 \righthyphenmin=3
 %\newpage
