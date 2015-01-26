@@ -101,6 +101,9 @@
 \renewcommand{\chaptertitlename}{CHAPTER}
 \newcommand{\figuretitlename}{FIGURE}
 \newcommand{\tabletitlename}{TABLE}
+%\newcommand{\refname}{REFERENCES}
+\renewcommand{\bibname}{REFERENCES}
+\renewcommand*{\appendixname}{APPENDIX}
 
 % Make a new titleclass called "bodysection" which will be used forsections in the body text.
 %\titleclass{\bodysection}{straight}[\bodychapter]
@@ -122,6 +125,10 @@
 %\newcounter{bodysubsubsubsection}
 %\renewcommand{\thebodysubsubsubsection}{\arabic{bodychapter}.\arabic{bodysection}.\arabic{bodysubsection}.\arabic{bodysubsubsection}.\arabic{bodysubsubsubsection}}
 
+%\titleclass{\appendix}[0]{top}
+%\newcounter{appendix}
+%\renewcommand{\theappendix}{\Alph{appendix}}
+
 \titleclass{\subsubsubsection}{straight}[\subsubsection]
 \newcounter{subsubsubsection}
 \renewcommand{\thesubsubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{subsubsubsection}}
@@ -129,9 +136,9 @@
 % Make commands for appendix chapters, sections, and subsections as aliases for chapter, section,
 % and subsection. This is not necessary but makes for a uniform scheme in which body chapters, etc.
 % use \bodychapter section command and appendix chapters use \appendixchapter section command.
-\newcommand*{\appendixchapter}[1]{\chapter{#1}\addcontentsline{toc}{chapter}{#1}\par}
-\newcommand*{\appendixsection}[1]{\section{#1}\addcontentsline{toc}{section}{#1}\par}
-\newcommand*{\appendixsubsection}[1]{\subsection{#1}\addcontentsline{toc}{subsection}{#1}\par}
+%\newcommand*{\appendixchapter}[1]{\chapter{#1}\addcontentsline{toc}{chapter}{#1}\par}
+%\newcommand*{\appendixsection}[1]{\section{#1}\addcontentsline{toc}{section}{#1}\par}
+%\newcommand*{\appendixsubsection}[1]{\subsection{#1}\addcontentsline{toc}{subsection}{#1}\par}
 
 %% Format the title page.
 
@@ -458,35 +465,35 @@ ALL RIGHTS RESERVED
 %\newpage
 %}
 
-\newenvironment{publications}
-{
-  \newpage
-  \begin{singlespace}
-  \newcommand*{\refname}{
-    PUBLICATIONS
-    \vspace{\baselineskip}
-    \vspace{\baselineskip}
-  }
-  \begin{thebibliography}{99}
-}
-{
-\end{thebibliography}
-\end{singlespace}
-\newcommand*{\refname}{
-REFERENCES
-\vspace{\baselineskip}
-\vspace{\baselineskip}
-}
-}
+%\newenvironment{publications}
+%{
+%  \newpage
+%  \begin{singlespace}
+%  \newcommand*{\refname}{
+%    PUBLICATIONS
+%    \vspace{\baselineskip}
+%    \vspace{\baselineskip}
+%  }
+%  \begin{thebibliography}{99}
+%}
+%{
+%\end{thebibliography}
+%\end{singlespace}
+%\newcommand*{\refname}{
+%REFERENCES
+%\vspace{\baselineskip}
+%\vspace{\baselineskip}
+%}
+%}
 
 \newcommand{\pubitem}[1]{\bibitem{} #1}
 
 % The following commands will be used for formatting the bibliography.
-\newcommand*{\refname}{
-REFERENCES
-\vspace{2ex}
-\vspace{\baselineskip}
-}
+%\renewcommand*{\refname}{
+%REFERENCES
+%\vspace{2ex}
+%\vspace{\baselineskip}
+%}
 
 
 % Redefines the title of the bibliography.
@@ -497,11 +504,13 @@ REFERENCES
 \newcommand{\startbib}{
 \newpage
 \begin{singlespace}
-\addcontentsline{toc}{chapter}{REFERENCES}
-\bibliographystyle{abbrv}
+\addcontentsline{toc}{chapter}{\bibname}
+%\bibliographystyle{abbrv}
 }
 
-\newcommand{\finishbib}{\end{singlespace}}
+\newcommand{\finishbib}{
+\end{singlespace}
+}
 
 
 % This redefines the table of contents title.
@@ -530,6 +539,18 @@ REFERENCES
 ]
 
 \titlespacing{\chapter}{0pt}{-0.375in}{.1875in}
+
+%\titleformat{\appendix}[block]{\normalfont\mdseries\centering}
+%{\MakeUppercase{\appendixtitlename} \theappendix :}
+%{.25em}{\MakeUppercase\mdseries}[\thispagestyle{myheadings} % yes page number
+%\setcounter{section}{0} \setcounter{subsection}{0}
+%\setcounter{subsubsection}{0}
+%\setcounter{subsubsubsection}{0}
+%\addtocontents{lof}{\vspace*{-10pt}}
+%\addtocontents{lot}{\vspace*{-10pt}}
+%]
+
+%\titlespacing{\appendix}{0pt}{-0.375in}{.1875in}
 
 % Parameter -.25in isneeded to reduce the 1.25in space from top edge
 % of paper to chapter title that alreadyexists to make space = 1in.
@@ -639,8 +660,12 @@ REFERENCES
 % used for putting the title `REFERENCES' in the toc.
 
 \titlecontents{chapter}[0pt]{\normalfont\mdseries}
-{\MakeUppercase{\appendixname} \thecontentslabel :\hspace{.25em}}
+{\MakeUppercase{\chaptertitlename} \thecontentslabel :\hspace{.25em}}
 {}{\titlerule*[1pc]{}\contentspage}
+
+%\titlecontents{appendix}[0pt]{\normalfont\mdseries}
+%{\MakeUppercase{\appendixtitlename} \thecontentslabel :\hspace{.25em}}
+%{}{\titlerule*[1pc]{}\contentspage}
 
 \titlecontents{section}[4em]{}{\contentslabel{2.3em}}{}
 {\titlerule*[1pc]{.}\contentspage}
@@ -683,9 +708,9 @@ REFERENCES
 % Command to continue appendix chapter headings correctly when each appendix chapter is contained in a
 % different file. This will be used instead "\appendix" command for all appendix chapters after the 1st.
 % (Using "\appendix" causes each new appendix chapter to be labelled as "A" which is incorrect.)
-\newcommand{\continueappendixchapterheadings}
-{\renewcommand{\thechapter}{\Alph{chapter}}
-\renewcommand*{\chaptertitlename}{Appendix}}
+%\newcommand{\continueappendixchapterheadings}
+%{\renewcommand{\thechapter}{\Alph{chapter}}
+%\renewcommand*{\chaptertitlename}{Appendix}}
 
 
 % Commands to allow enumerate environment to be used with correct  spacing for uncc requirements.
