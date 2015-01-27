@@ -29,8 +29,8 @@
 \pagenumbering{roman}
 \fbmatterchapterformat
 % Doctype should be either dissertation proposal, dissertation, or thesis.
-% If you're getting a master's, use "thesis."  If you're getting a PhD, use "dissertation."
-
+% If you're getting a master's, specify "thesis" below.  
+% If you're getting a PhD, specify "dissertation" below.
 \doctype{dissertation}
 
 
@@ -52,20 +52,38 @@
 \committeeMember{Dr. Person C}
 
 
-% Generate the preliminary pages (title page, copyright page, 
-% abstract page, and table of contents) in the following order.
+% Generate the preliminary title page and copyright page.
 \maketitlepage
-
 \makecopyright
 \begin{abstract}
-Content of your abstract goes here.\end{abstract}
+You must have an abstract. The content of your abstract goes here. 
+
+The abstract is the briefest possible summary of the work and conclusions
+not exceeding one page in length.\end{abstract}
 \begin{acknowledgements}
-Your acknowledgements go here.\end{acknowledgements}
+If you decide to have a acknowledgements page, your acknowledgement
+text would go here.
+
+The Acknowledgement page should be brief, simple, and free of sentimentality
+or trivia. It is customary to recognize the role of the advisor, the
+other members of the advisory committee, and only those organizations
+or individuals who actually aided in the project. Further, you should
+acknowledge any outside source of financial assistance, such as GASP
+grants, contracts, or fellowships.\end{acknowledgements}
 \begin{dedication}
-If you decide to have a dedication. Your dedication would go here.\end{dedication}
+If you decide to have a dedication page, your dedication text would
+go here.
+
+The Dedication page, if used, pays a special tribute to a person(s)
+who has given extraordinary encouragement or support to one\textquoteright{}s
+academic career.\end{dedication}
 \begin{introduction}
-If you decide to have an introduction. Your introduction would go
-here. 
+If you decide to have an introduction page, your introduction text
+would go here. 
+
+Depending on the discipline or the requirements of the student\textquoteright{}s
+advisory committee, an Introduction may be included as a preliminary
+page.
 \end{introduction}
 \tableofcontents{}
 
@@ -95,29 +113,28 @@ here.
 
 
 \begin{comment}
-UNC Charlotte Guidelines 2014: Thesis Text (p4)
-
-Do not use bold, underline or create unusual fonts for chapter titles;
-do not use running headers or footers. Do not use bold, underline
-or italics for headings, subheadings, etc. Changes in font style or
-typeface are not permitted except for inclusion of illustrative or
-documentary materials such as computer printouts or if required for
-mathematical expressions. If you are unsure about the acceptability
-of the typeface you want to use for your final copy of the thesis
-or dissertation, please verify with the thesis/dissertation reviewer
-in the Graduate School that it can be used.
 \end{comment}
 
 
 
 \chapter{INTRODUCTION}
 
-This is my introduction. GNU is a major free software advocate \cite{gpl}.
-
-
-\section{Problem Statement}
-
-This is an example of a subsection.
+This is my introduction. Here is an example of a citation using BiB\TeX{}
+that cites the GNU project, a major force in free software advocacy
+\cite{gpl}. The UNC Charlotte thesis guidelines state the following
+about the text of thesis and dissertation documents:
+\begin{quote}
+``Do not use bold, underline or create unusual fonts for chapter
+titles; do not use running headers or footers. Do not use bold, underline
+or italics for headings, subheadings, etc. Changes in font style or
+typeface are not permitted except for inclusion of illustrative or
+documentary materials such as computer printouts or if required for
+mathematical expressions. If you are unsure about the acceptability
+of the typeface you want to use for your final copy of the thesis
+or dissertation, please verify with the thesis/dissertation reviewer
+in the Graduate School that it can be used.'' \emph{--~UNC Charlotte
+Guidelines 2014: Thesis Text} (page 4)
+\end{quote}
 \begin{table}[H]
 \begin{centering}
 {\small }%
@@ -137,8 +154,22 @@ This is an example of a subsection.
 \end{tabular}
 \par\end{centering}{\small \par}
 
-\caption{This is an example of a table.}
+\caption{\label{tab:Table1}This is an example of a table.}
 \end{table}
+
+
+
+\section{Problem Statement}
+
+This is an example of a subsection. I have included Table \ref{tab:Table1}
+and Table \ref{tab:Table2} as examples of how to place tables and
+table cross-references in your document. I have also included Figure
+\ref{fig:LinearFit} which has subfigures within it to provide an
+example of a graphical figure in the document. Labeling tables and
+figures and cross-referencing these labels in your text will ensure
+that the list of figures and list of tables generated automatically
+will always be correct even when you move figures and tables to new
+locations in your document.
 \begin{table}[H]
 \centering{}{\small }%
 \begin{tabular}{|>{\centering}p{1in}|>{\centering}p{1in}|>{\centering}p{1in}|}
@@ -154,10 +185,10 @@ This is an example of a subsection.
 \hline 
 {\small $\gamma$} & {\small 0.53} & {\small 0.29}\tabularnewline
 \hline 
-\end{tabular}\caption[Example of short label.]{This is an example of a table having a long caption whose caption
-in the list of tables is much shorter (from the ``opt'' label).
-Correlation coefficient (R) comparison between displacement parameters
-and average overall ranking and KL score.}
+\end{tabular}\caption[Example of short label.]{\label{tab:Table2}This is an example of a table having a long caption
+whose caption in the list of tables is much shorter (from the ``opt''
+label). Correlation coefficient (R) comparison between displacement
+parameters and average overall ranking and KL score.}
 \end{table}
 \begin{figure}[H]
 \begin{centering}
@@ -176,8 +207,8 @@ and average overall ranking and KL score.}
 }
 \par\end{centering}
 
-\caption[Shortened figure caption for list of figures.]{Linear fitting translational displacement to KL and average overall
-severity.}
+\caption[Shortened figure caption for list of figures.]{\label{fig:LinearFit}Linear fitting translational displacement to
+KL and average overall severity.}
 \end{figure}
 
 
@@ -187,28 +218,42 @@ severity.}
 Lots of interesting conclusions will be put here.
 
 \fbmatterchapterformat
-% uncomment line below to title your reference list as BIBLIOGRAPHY
-%\renewcommand{\bibname}{BIBLIOGRAPHY}
 
 \bibliographystyle{plain}
 \bibliography{references_db}
 
 
 \newpage{}\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
-\renewcommand{\chaptertitlename}{APPENDIX}
+\renewcommand{\chaptertitlename}{APPENDIX} 
 
 \appendix
 
 \chapter{QUADRATIC FIT COMPARISON GRAPHS}
 
-Test of appendices.
-
+The appendices should be used for whatever material you or your advisory
+committee believes should be included, but would not be appropriate
+in the text of the thesis or dissertation. Such materials can include:
+\begin{enumerate}
+\item the original data obtained in the thesis or dissertation research,
+including computer programs and printouts, surveys, or correspondence;
+\item detailed descriptions of procedures, which go beyond the general outline
+of methods and approaches presented in the text;
+\item a particularly extensive review of the literature and other information
+that may be useful to future scholars who may wish to delve more deeply
+into the research topic.
+\end{enumerate}
 
 \section{Section in appendix}
 
 This is a section in the appendix.
 \begin{vita}
-If you want to include a vita, i.e., a biosketch about yourself. You
-would include it here.\end{vita}
+If you decide to include a vita (a biosketch about yourself), you
+would include the text of your vita here.
+
+The thesis or dissertation may conclude with a biographical sketch
+of the author. The sketch should be written in the third person and
+should indicate birth date and birthplace, where the author earned
+the bachelor's degree and if applicable the master's degree, professional
+societies to which the authors belongs, and other professional activities.\end{vita}
 
 \end{document}

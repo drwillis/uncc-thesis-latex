@@ -85,12 +85,13 @@ fbmatterchapterformat
 
 \begin_layout Plain Layout
 
-% If you're getting a master's, use "thesis."  If you're getting a PhD, use
- "dissertation."
+% If you're getting a master's, specify "thesis" below.
+  
 \end_layout
 
 \begin_layout Plain Layout
 
+% If you're getting a PhD, specify "dissertation" below.
 \end_layout
 
 \begin_layout Plain Layout
@@ -231,12 +232,7 @@ status open
 
 \begin_layout Plain Layout
 
-% Generate the preliminary pages (title page, copyright page, 
-\end_layout
-
-\begin_layout Plain Layout
-
-% abstract page, and table of contents) in the following order.
+% Generate the preliminary title page and copyright page.
 \end_layout
 
 \begin_layout Plain Layout
@@ -244,10 +240,6 @@ status open
 
 \backslash
 maketitlepage
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -263,22 +255,49 @@ makecopyright
 \end_layout
 
 \begin_layout Abstract
-Content of your abstract goes here.
+You must have an abstract.
+ The content of your abstract goes here.
+ 
+\end_layout
+
+\begin_layout Abstract
+The abstract is the briefest possible summary of the work and conclusions
+ not exceeding one page in length.
 \end_layout
 
 \begin_layout Acknowledgements
-Your acknowledgements go here.
+If you decide to have a acknowledgements page, your acknowledgement text
+ would go here.
+\end_layout
+
+\begin_layout Acknowledgements
+The Acknowledgement page should be brief, simple, and free of sentimentality
+ or trivia.
+ It is customary to recognize the role of the advisor, the other members
+ of the advisory committee, and only those organizations or individuals
+ who actually aided in the project.
+ Further, you should acknowledge any outside source of financial assistance,
+ such as GASP grants, contracts, or fellowships.
 \end_layout
 
 \begin_layout Dedication
-If you decide to have a dedication.
- Your dedication would go here.
+If you decide to have a dedication page, your dedication text would go here.
+\end_layout
+
+\begin_layout Dedication
+The Dedication page, if used, pays a special tribute to a person(s) who
+ has given extraordinary encouragement or support to one’s academic career.
 \end_layout
 
 \begin_layout Introduction
-If you decide to have an introduction.
- Your introduction would go here.
+If you decide to have an introduction page, your introduction text would
+ go here.
  
+\end_layout
+
+\begin_layout Introduction
+Depending on the discipline or the requirements of the student’s advisory
+ committee, an Introduction may be included as a preliminary page.
 \end_layout
 
 \begin_layout Standard
@@ -441,19 +460,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-UNC Charlotte Guidelines 2014: Thesis Text (p4)
-\end_layout
 
-\begin_layout Plain Layout
-Do not use bold, underline or create unusual fonts for chapter titles; do
- not use running headers or footers.
- Do not use bold, underline or italics for headings, subheadings, etc.
- Changes in font style or typeface are not permitted except for inclusion
- of illustrative or documentary materials such as computer printouts or
- if required for mathematical expressions.
- If you are unsure about the acceptability of the typeface you want to use
- for your final copy of the thesis or dissertation, please verify with the
- thesis/dissertation reviewer in the Graduate School that it can be used.
 \end_layout
 
 \end_inset
@@ -467,7 +474,8 @@ INTRODUCTION
 
 \begin_layout Standard
 This is my introduction.
- GNU is a major free software advocate 
+ Here is an example of a citation using BiBTeX that cites the GNU project,
+ a major force in free software advocacy 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gpl"
@@ -475,14 +483,38 @@ key "gpl"
 \end_inset
 
 .
+ The UNC Charlotte thesis guidelines state the following about the text
+ of thesis and dissertation documents:
 \end_layout
 
-\begin_layout Section
-Problem Statement
+\begin_layout Quote
+\begin_inset Quotes eld
+\end_inset
+
+Do not use bold, underline or create unusual fonts for chapter titles; do
+ not use running headers or footers.
+ Do not use bold, underline or italics for headings, subheadings, etc.
+ Changes in font style or typeface are not permitted except for inclusion
+ of illustrative or documentary materials such as computer printouts or
+ if required for mathematical expressions.
+ If you are unsure about the acceptability of the typeface you want to use
+ for your final copy of the thesis or dissertation, please verify with the
+ thesis/dissertation reviewer in the Graduate School that it can be used.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+--
+\begin_inset space ~
+\end_inset
+
+UNC Charlotte Guidelines 2014: Thesis Text
+\emph default
+ (page 4)
 \end_layout
 
 \begin_layout Standard
-This is an example of a subsection.
 \begin_inset Float table
 placement H
 wide false
@@ -809,6 +841,12 @@ Total
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Table1"
+
+\end_inset
+
 This is an example of a table.
 \end_layout
 
@@ -820,6 +858,43 @@ This is an example of a table.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Problem Statement
+\end_layout
+
+\begin_layout Standard
+This is an example of a subsection.
+ I have included Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Table1"
+
+\end_inset
+
+ and Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Table2"
+
+\end_inset
+
+ as examples of how to place tables and table cross-references in your document.
+ I have also included Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LinearFit"
+
+\end_inset
+
+ which has subfigures within it to provide an example of a graphical figure
+ in the document.
+ Labeling tables and figures and cross-referencing these labels in your
+ text will ensure that the list of figures and list of tables generated
+ automatically will always be correct even when you move figures and tables
+ to new locations in your document.
+ 
 \begin_inset Float table
 placement H
 wide false
@@ -1040,6 +1115,13 @@ Example of short label.
 
 \end_inset
 
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Table2"
+
+\end_inset
+
 This is an example of a table having a long caption whose caption in the
  list of tables is much shorter (from the 
 \begin_inset Quotes eld
@@ -1155,6 +1237,13 @@ Shortened figure caption for list of figures.
 
 \end_inset
 
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LinearFit"
+
+\end_inset
+
 Linear fitting translational displacement to KL and average overall severity.
 \end_layout
 
@@ -1242,7 +1331,26 @@ QUADRATIC FIT COMPARISON GRAPHS
 \end_layout
 
 \begin_layout Standard
-Test of appendices.
+The appendices should be used for whatever material you or your advisory
+ committee believes should be included, but would not be appropriate in
+ the text of the thesis or dissertation.
+ Such materials can include:
+\end_layout
+
+\begin_layout Enumerate
+the original data obtained in the thesis or dissertation research, including
+ computer programs and printouts, surveys, or correspondence;
+\end_layout
+
+\begin_layout Enumerate
+detailed descriptions of procedures, which go beyond the general outline
+ of methods and approaches presented in the text;
+\end_layout
+
+\begin_layout Enumerate
+a particularly extensive review of the literature and other information
+ that may be useful to future scholars who may wish to delve more deeply
+ into the research topic.
 \end_layout
 
 \begin_layout Section
@@ -1254,8 +1362,17 @@ This is a section in the appendix.
 \end_layout
 
 \begin_layout Vita
-If you want to include a vita, i.e., a biosketch about yourself.
- You would include it here.
+If you decide to include a vita (a biosketch about yourself), you would
+ include the text of your vita here.
+\end_layout
+
+\begin_layout Vita
+The thesis or dissertation may conclude with a biographical sketch of the
+ author.
+ The sketch should be written in the third person and should indicate birth
+ date and birthplace, where the author earned the bachelor's degree and
+ if applicable the master's degree, professional societies to which the
+ authors belongs, and other professional activities.
 \end_layout
 
 \end_body

@@ -25,22 +25,22 @@
 \usepackage{unccspecs}
  
 % Scott - For Windows and LEd compatibitility, PSTricks was separated from the node and tree packages, and [pdf] was added (so pdflatex command can compile). Also, auto-pst-pdf allows postscript-to-pdf conversion of the tree- creating macros mentioned below. See this thread for more info: http://tex.stackexchange.com/questions/8413/how-to-use-pstricks-in-pdflatex
-\usepackage[pdf]{pstricks}
-\usepackage[off]{auto-pst-pdf}
+%\usepackage[pdf]{pstricks}
+%\usepackage[off]{auto-pst-pdf}
 
 % This allows for tree- creating macros
 % from the pstricks graphics package.
-\usepackage{pst-node,pst-tree} 
+%\usepackage{pst-node,pst-tree} 
 
 % This allows for data plotting macros from the pstricks
 % package.
-\usepackage{pst-plot} 
+%\usepackage{pst-plot} 
 
 
-\usepackage{amsmath} % This allows more mathematical formatting macros.
-\usepackage{amsfonts} % This allows more mathematical fonts.
+%\usepackage{amsmath} % This allows more mathematical formatting macros.
+%\usepackage{amsfonts} % This allows more mathematical fonts.
 
 % This allows files contents to be printed in the latex
 % document as is (without latex formatting).
-\usepackage{verbatim} 
+%\usepackage{verbatim} 
 
