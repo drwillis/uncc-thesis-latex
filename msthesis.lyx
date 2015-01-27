@@ -384,7 +384,7 @@ set_width "auto"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GNU"
-description "GNU is not UNIX."
+description "GNU is a recursive acronym for \"GNU is not Unix!\""
 
 \end_inset
 
