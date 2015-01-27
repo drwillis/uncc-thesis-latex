@@ -3,13 +3,6 @@
 \begin_document
 \begin_header
 \textclass UNCC-thesis
-\begin_preamble
-% This line decides how deep the Table of Contents will go.  
-% A tocdepth of 1 means it will only show chapters and sections.
-% You can increase it if you want your Table of Contents to show 
-% subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
-\setcounter{tocdepth}{2}
-\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -75,11 +68,14 @@ status open
 
 
 \backslash
-startprelim
+pagenumbering{roman}
 \end_layout
 
 \begin_layout Plain Layout
 
+
+\backslash
+fbmatterchapterformat
 \end_layout
 
 \begin_layout Plain Layout
@@ -274,16 +270,36 @@ Content of your abstract goes here.
 Your acknowledgements go here.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-listofcontentsfigurestables
+\begin_layout Dedication
+If you decide to have a dedication.
+ Your dedication would go here.
 \end_layout
+
+\begin_layout Introduction
+If you decide to have an introduction.
+ Your introduction would go here.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
@@ -298,7 +314,92 @@ status open
 
 
 \backslash
-startbody
+renewcommand{
+\backslash
+nomname}{LIST OF ABBREVIATIONS}
+\end_layout
+
+\begin_layout Plain Layout
+
+% uncomment line below to title your nomenclature list as LIST OF SYMBOLS
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+renewcommand{
+\backslash
+nomname}{LIST OF SYMBOLS}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{
+\backslash
+nomname}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GNU"
+description "GNU is not UNIX."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\begin_layout Plain Layout
+
+% 2 inch top spacing for new chapters
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bodychapterformat
 \end_layout
 
 \end_inset
@@ -328,24 +429,33 @@ status open
 
 \end_layout
 
-\begin_layout Chapter
-INTRODUCTION
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
+UNC Charlotte Guidelines 2014: Thesis Text (p4)
+\end_layout
 
-
-\backslash
-pagenumbering{arabic}
+\begin_layout Plain Layout
+Do not use bold, underline or create unusual fonts for chapter titles; do
+ not use running headers or footers.
+ Do not use bold, underline or italics for headings, subheadings, etc.
+ Changes in font style or typeface are not permitted except for inclusion
+ of illustrative or documentary materials such as computer printouts or
+ if required for mathematical expressions.
+ If you are unsure about the acceptability of the typeface you want to use
+ for your final copy of the thesis or dissertation, please verify with the
+ thesis/dissertation reviewer in the Graduate School that it can be used.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+INTRODUCTION
 \end_layout
 
 \begin_layout Standard
@@ -1052,7 +1162,6 @@ Linear fitting translational displacement to KL and average overall severity.
 \end_layout
 
 \begin_layout Chapter
-\paragraph_spacing double
 CONCLUSIONS
 \end_layout
 
@@ -1062,13 +1171,13 @@ Lots of interesting conclusions will be put here.
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-startbib
+fbmatterchapterformat
 \end_layout
 
 \end_inset
@@ -1085,22 +1194,6 @@ options "plain"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-finishbib
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Standard
@@ -1151,6 +1244,11 @@ Section in appendix
 
 \begin_layout Standard
 This is a section in the appendix.
+\end_layout
+
+\begin_layout Vita
+If you want to include a vita, i.e., a biosketch about yourself.
+ You would include it here.
 \end_layout
 
 \end_body

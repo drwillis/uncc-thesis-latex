@@ -1,45 +1,43 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This package contains formatting commands for uncc thesis specifications. %
-% It defines the following commands: %
-% 1) \bodychapter - to be used to create chapters in the bodytext. %
-% 2) \bodysection, \bodysubsection \bodysubsubsection \bodysubsubsubsection- create section subsection, subsubsection and %
-% subsubsubsection in body text. %
-% 3) \appendixchapter, \appendixsection, \appendixsubsection - create appendix chapters, %
-% sections, and subsections. %
-% 4) \startbibliography, \finishbibliography - begin and end the bibliography environment.%
-% 5) \author, \title, \doctype, \degree, \major, \publicationyear, \advisor, \committeeMember,
-%    and \abstract - user-defined variables for setting up the preliminary pages.
-% 6) \startprelim and \startbody - manages the correct page numbering for the preliminaries
-%    and the body.
-% 7) \maketitlepage, \makecopyright, \abstract - generates the appropriate preliminary pages.
-% The original source of this file is unknown, although I found it posted online by
-% John Vannoy, so I assume he had a hand in it at some point.  This file included
-% commands 1-4 as described above with the exception of subsubsubsections added in 2013.
-% Automatic generation of preliminary pages (5-7) added in 2008 by Caroline Ziemkiewicz.
-% Additional corrections added in 2009 by Evan Suma and Rich Nguyen.
-% Search for DOSINGLE in this file to print your thesis single spaced for review purposes added 2013 by Dr. Erin Carroll.
-% Subsubsubsection added in 2013 by Andrew Besmer.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This package contains formatting commands for uncc thesis specifications. 
+%
+% It defines the following commands: 
+%
+% 1) \author, \title, \doctype, \degree, \major, \publicationyear, \advisor, \committeeMember,
+%    - user-defined variables for setting up the preliminary pages.
+% 2) \maketitlepage, \makecopyright, generates the appropriate preliminary pages.
+%
+% HISTORY
+%
+% (2007?) The original source of this file is unknown, although it was found posted online by
+%         John Vannoy, so I assume he had a hand in it at some point.
+% (2008) Automatic generation of preliminary pages (5-7) added in 2008 by Caroline Ziemkiewicz.
+% (2009) Additional corrections added in 2009 by Evan Suma and Rich Nguyen.
+% (2013) Search for DOSINGLE in this file to print your thesis single spaced for review purposes added 2013 by Dr. Erin Carroll.
+% (2013) Subsubsubsection added in 2013 by Andrew Besmer.
+% (2015) Significant modifications introduced and restructuring for LyX compatibility 
+%        Preserved work by Ziemkiewicz and re-wrote most other functionality - Andrew Willis, ECE 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % What formatting elements does this document support?
-% All elements of a UNCC thesis are supported except those items below marked with a '*' 
-% at the beginning of the line.
+% All elements of a UNCC thesis are supported. The thesis elements listed below are documented in the
+% 2014 UNC Charlotte Thesis formatting guidelines.
 %
 % Part I: Preliminary Pages / Frontmatter
-% a) Title Page (required)
+% a) Title/Signature Page (required)
 % b) Copyright Page (required)
 % c) Abstract (required)
-%*d) Dedication Page (optional)
+% d) Dedication Page (optional)
 % e) Acknowledgement Page (optional)
-%*f) Introduction Page (optional)
+% f) Introduction Page (optional)
 % g) Table of Contents (required)
 % h) List of Tables (optional)
 % i) List of Figures (optional)
-%*j) List of Symbols/Abbreviations (optional)
+% j) List of Symbols/Abbreviations (optional)
 % Part II: Thesis Text (required)
 % Part III: References/Bibliography (required)
 % Part IV: Appendices (optional) 
-%*Part V: Vita (optional) 
+% Part V: Vita (optional) 
 %
 
 % Use this package for double spacing.
@@ -53,16 +51,26 @@
 \usepackage[rm,md,up,tiny,center,compact]{titlesec}
 \usepackage[dotinlabels]{titletoc}
 
-% This package is for conditional statements.
+% This package is for conditional statements used in generating the Title/Signature Page
 \usepackage{ifthen}
-\usepackage{psfrag}
+%\usepackage{psfrag}
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p4) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MARGINS
+% All copies of a thesis/dissertation must have the following uniform margins:
+% Left-hand margin: 1 ½ inches (to ensure sufficient room for binding)
+% Right-hand margin: 1 inch
+% Bottom margin: a minimum 1 inch
+% Top Margin: 1 inch
+% Exceptions: The copyright page must have a 2 inch Bottom margin, the first page
+% of each chapter must have a Top margin that is 2 inches.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p4) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Make the top margin (from top edge of paper to top of header) be 3/4inch. This is
 % needed to set the page number (which will be inside the header).
 %\setlength{\topmargin}{-0.625in}
 
-% Negative value because top margin= \topmargin + 1 inch (orig {-0.625in})
-% Negative value because top margin = \topmargin + 1 inch
+% Negative value because top margin = \topmargin + 1 inch (orig {-0.625in})
 % (The amount .625 = .25 + .375 which accounts for the distance
 % between the top of the pagenumber and the top of the header
 % region.)
@@ -90,71 +98,94 @@
 \setlength{\footskip}{0in} % No footer region needed.
 \setlength{\textheight}{9in}
 
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p4) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LINE SPACING
+%
+%  a. All theses and dissertations are to be typed with double spacing between lines throughout.
+%  b. Certain sections should be single-spaced, such as: long quotations; table and 
+%     figure captions, descriptions and footnotes, list of references, literature cited, 
+%     bibliography, etc. with a double space between each individual reference or computer print-out.
+%  c. Tables and figures may appear on the same page with text, separated from the text,
+%     above and below, by triple spacing.
+%  d. The beginning of each new paragraph must be indented.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p4) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %DOSINGLE Comment next line out  to single space for review purposes
 % command from setspace package to invoke doublespacing
 \doublespacing
 
+%Get LaTeX to Double-Space
+%DOSINGLE Comment next line out  to single space for review purposes
+%\renewcommand{\baselinestretch}{2}
+
+% Commands to allow enumerate environment to be used with correct  spacing for uncc requirements.
+\setlength{\parindent}{.17in} % Set the paragraph's indent to match the indent of the enumerate environment.
+\newcommand{\startenum}{\begin{enumerate}}
+\newcommand{\finishenum}{\ifthenelse{\value{enumii} = 0} % Check if in 1st level nesting.
+{\vspace{-7pt} \end{enumerate}} % 1st level nesting, reduce vertical space by 7pt.
+% before \end{enumerate}.
+{\ifthenelse{\value{enumiii} = 0} % Not in 1st level, check if in 2nd level.
+{\vspace{-2pt} \end{enumerate}} % 2nd level nesting, reduce vertical space by 2pt.
+% before \end{enumerate}.
+{\end{enumerate}} % Not in 2nd level nesting, no reduction of vertical space needed
+% before \end{enumerate}.
+} %end Not in 1st level.
+} %end \finishenum
+\newcommand{\enumitem}{\ifthenelse{\value{enumii} = 0} % Check if in 1st level nesting.
+{\vspace{-7pt} \item} % 1st level nesting, reduce vertical space by 7pt. before \item.
+{\ifthenelse{\value{enumiii} = 0} % Not in 1st level, check if in 2nd level.
+{\vspace{-2pt} \item} % 2nd level nesting, reduce vertical space by 2pt. before \item.
+{\item} % Not in 2nd level nesting, no reduction of vertical space needed before \item.
+} %end Not in 1st level.
+} %end \enumitem
+
+% Command to place adequate space between a figure or table and preceding body text of the document.
+\newcommand{\tablespace}{\vspace{10pt}}
+
+% Command to place adequate space between a figure or table and its caption.
+\newcommand{\captionspace}{\vspace{-10pt}}
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p5) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAGE NUMBERING POSITION
+% Position of Page Number
+%  Upper right-hand corner on the margin line at the right
+%  0.75" from the top of the sheet
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p5) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This makes my own style headings (withpagenumber in upper rt. corner).
 \pagestyle{myheadings}
-
 % This will put page number in right corner without anyother text in header.
 % (Footer will be blank.)
 \markright{}
 
-% Increase the section number depth and the toc depth (the depth ofsections which get numbered
-% and put in the table of contents). This is necessary to allow thenew titleclasses to be
-% numbered correctly and put in the toc.
-\setcounter{secnumdepth}{5}
-%\setcounter{tocdepth}{5}
-
-% Make a new titleclass called "bodychapter" which will be used forchapters in the body text.
-%\titleclass{\bodychapter}[0]{top}
-%\newcounter{bodychapter}
-\renewcommand{\chaptertitlename}{CHAPTER}
-\newcommand{\figuretitlename}{FIGURE}
-\newcommand{\tabletitlename}{TABLE}
-%\newcommand{\refname}{REFERENCES}
-\renewcommand{\bibname}{REFERENCES}
-\renewcommand*{\appendixname}{APPENDIX}
-
-% Make a new titleclass called "bodysection" which will be used forsections in the body text.
-%\titleclass{\bodysection}{straight}[\bodychapter]
-%\newcounter{bodysection}
-%\renewcommand{\thebodysection}{\arabic{bodychapter}.\arabic{bodysection}}
-
-% Make a new titleclass called "bodysubsection" which will be used for subsections in the body text.
-%\titleclass{\bodysubsection}{straight}[\bodysection]
-%\newcounter{bodysubsection}
-%\renewcommand{\thebodysubsection}{\arabic{bodychapter}.\arabic{bodysection}.\arabic{bodysubsection}}
-
-% Make a new titleclass called "bodysubsubsection" which will be used for subsections in the body text.
-%\titleclass{\bodysubsubsection}{straight}[\bodysubsection]
-%\newcounter{bodysubsubsection}
-%\renewcommand{\thebodysubsubsection}{\arabic{bodychapter}.\arabic{bodysection}.\arabic{bodysubsection}.\arabic{bodysubsubsection}}
-
-% Make a new titleclass called "bodysubsubsubsection" which will be used for subsections in the body text.
-%\titleclass{\bodysubsubsubsection}{straight}[\bodysubsubsection]
-%\newcounter{bodysubsubsubsection}
-%\renewcommand{\thebodysubsubsubsection}{\arabic{bodychapter}.\arabic{bodysection}.\arabic{bodysubsection}.\arabic{bodysubsubsection}.\arabic{bodysubsubsubsection}}
-
-%\titleclass{\appendix}[0]{top}
-%\newcounter{appendix}
-%\renewcommand{\theappendix}{\Alph{appendix}}
-
-\titleclass{\subsubsubsection}{straight}[\subsubsection]
-\newcounter{subsubsubsection}
-\renewcommand{\thesubsubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{subsubsubsection}}
-
-% Make commands for appendix chapters, sections, and subsections as aliases for chapter, section,
-% and subsection. This is not necessary but makes for a uniform scheme in which body chapters, etc.
-% use \bodychapter section command and appendix chapters use \appendixchapter section command.
-%\newcommand*{\appendixchapter}[1]{\chapter{#1}\addcontentsline{toc}{chapter}{#1}\par}
-%\newcommand*{\appendixsection}[1]{\section{#1}\addcontentsline{toc}{section}{#1}\par}
-%\newcommand*{\appendixsubsection}[1]{\subsection{#1}\addcontentsline{toc}{subsection}{#1}\par}
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p5-6) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE/SIGNATURE PAGE (required)
+% Page Numbering (none - counted as lower case Roman numeral i)
+%
+% The title/signature page of a thesis or dissertation must bear the following; in the following order:
+%  a. a 1" top margin
+%  b. The title of the thesis or dissertation typed in all capital letters and centered.
+%  c. Skip 3 single spaced lines.
+%  d. The word “by”
+%  e. Skip 1 single spaced line.
+%  f. The full legal name of the candidate.
+%  g. Skip 4 single spaced lines.
+%  h. The submission statement single spaced as shown in the sample pages at the end of this guide.
+%  i. Skip 1 single spaced line.
+%  j. The city in which the committee accepts the work.
+%  k. Skip 1 single spaced line.
+%  l. The year of graduation.
+%  m. Skip 1 single spaced line.
+%  n. Approved signature lines as shown in the example at the end of this guide.
+%  o. Signatures must be in black or blue ink only
+%  p. This page is not numbered but is counted (as i.)
+%
+% The title/signature page should follow exactly the spacing and use of capital letters as shown in the 
+% sample pages. The title should be centered at the top of the page and, to facilitate interlibrary 
+% referencing, it should be pared down whenever possible so it contains only key terms and necessary 
+% words. Each copy of the title page must have original signatures in either blue or black ink.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p5-6) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Format the title page.
-
 \renewcommand{\title}[1]{\newcommand{\calltitle}{#1}}
 \renewcommand{\author}[1]{\newcommand{\callauthor}{#1}}
 
@@ -354,7 +385,6 @@ Approved by:\\
 
 \end{flushright}
 
-
 \end{singlespace}
 
 \end{titlepage}
@@ -363,7 +393,17 @@ Approved by:\\
 
 }
 
-
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p6) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT PAGE (required)
+% Page Numbering (lower-case Roman numeral ii)
+%
+%            \copyright 20__
+%            Full Legal Name
+%          ALL RIGHTS RESERVED
+% This information should be centered and single-spaced with the last line 2 inches from the bottom
+% of the page. This page is numbered with a small Roman numeral placed ¾" from the top of the paper
+% and 1" from the right edge of the paper. The year of graduation is used on this page.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p6) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\makecopyright} {
 
 \begin{centering}
@@ -383,7 +423,26 @@ ALL RIGHTS RESERVED
 \newpage
 
 }
-
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p7) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT (required)
+% Page Numbering (lower-case Roman numeral iii)
+%
+% The abstract page is required, but not listed in the table of contents. The abstract is double-spaced, 
+% consisting of the briefest possible summary of the work and conclusions not exceeding one page in 
+% length. The heading for the abstract is single spaced and should be constructed as follows:
+%  a. The word ABSTRACT is centered with a 1" top margin.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the word ABSTRACT, type your full legal name in all capitals. 
+%     Type the title using lower case only except for the first letter of the first word. Type the name 
+%     of the professor who directed the thesis or dissertation in parentheses and in all capitals. See 
+%     example in the sample pages at the end of this guide
+%     NOTE: The title shown on the abstract page and the title on the title/signature page must be the same.
+%  d. Skip 2 single spaced lines.
+%  e. On the 3rd single spaced line below the heading, begin the text of the abstract. The text of the 
+%     abstract is double spaced. See the example shown at the end of this manual.
+%  f. This page is numbered with a small Roman numeral placed ¾” from the top of the paper and 1" from 
+%     the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p7) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\abstractname{ABSTRACT}
 
 %\if@titlepage
@@ -399,7 +458,7 @@ ALL RIGHTS RESERVED
 	\MakeUppercase{\callauthor}. \calltitle. (Under the direction of \MakeUppercase{\calladvisor})
 %        \bfseries \abstractname
 %        \@endparpenalty\@M
-	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
 	\end{singlespace}
       \end{center}}%
      {\par\vfil\null\newpage}
@@ -418,28 +477,25 @@ ALL RIGHTS RESERVED
 %      {\if@twocolumn\else\endquotation\fi}
 %\fi
 
-%\newcommand{\abstract}[1] {
-
-%\begin{centering}
-
-%\begin{singlespace}
-
-%ABSTRACT\\
-
-%\vspace{\baselineskip}
-%\vspace{\baselineskip}
-
-%\MakeUppercase{\callauthor}. \calltitle. (Under the direction of \MakeUppercase{\calladvisor})
-
-%\vspace{\baselineskip}
-
-%\end{singlespace}
-%\end{centering}
-
-%#1
-
-%\newpage
-%}
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p7-8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGEMENT PAGE (optional)
+% Page Numbering (continue lower-case Roman numerals)
+% DEDICATION PAGE (optional)
+% Page Numbering (continue lower-case Roman numerals)
+%
+% The Dedication page, if used, pays a special tribute to a person(s) who has given extraordinary 
+% encouragement or support to one’s academic career. The Acknowledgement page should be brief, simple, 
+% and free of sentimentality or trivia. It is customary to recognize the role of the advisor, the 
+% other members of the advisory committee, and only those organizations or individuals who actually 
+% aided in the project. Further, you should acknowledge any outside source of financial assistance, 
+% such as GASP grants, contracts, or fellowships.
+%  a. The word DEDICATION or ACKNOWLEDGEMENTS is centered with a 1" top margin.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the word DEDICATION or ACKNOWLEDGEMENTS, begin the text. 
+%     The text of the dedication is double spaced.
+%  d. This page is numbered with a small Roman numeral placed ¾” from the top of the paper and 1" from
+%     the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p7-8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\acknowledgementsname{ACKNOWLEDGEMENTS}
 
@@ -451,219 +507,93 @@ ALL RIGHTS RESERVED
 	\begin{singlespace}%
 	\acknowledgementsname\\
 %	\vspace{\baselineskip}
-	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
 %        \bfseries \abstractname
 %        \@endparpenalty\@M
 	\end{singlespace}
       \end{center}}%
      {\par\vfil\null\newpage}
 
-%\newcommand{\acknowledgments}[1] {
+\newcommand\dedicationname{DEDICATION}
 
-%\begin{centering}
+  \newenvironment{dedication}{%
+%      \titlepage
+%      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+	\begin{singlespace}%
+	\dedicationname\\
+%	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
+%        \bfseries \abstractname
+%        \@endparpenalty\@M
+	\end{singlespace}
+      \end{center}}%
+     {\par\vfil\null\newpage}
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCTION (optional) 
+% Page Numbering (continue lower-case Roman numerals)
+%
+% Depending on the discipline or the requirements of the student’s advisory committee, an 
+% Introduction may be included as a preliminary page. In this case it should be included 
+% before the Table of Contents.
+%  a. The word INTRODUCTION is centered with a 1” top margin.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the word INTRODUCTION, begin the text. The text 
+%     is double spaced.
+%  d. This page is numbered with a small Roman numeral placed ¾" from the top of the paper
+%     and 1" from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\begin{singlespace}
+\newcommand\introductionname{INTRODUCTION}
 
-%ACKNOWLEDGMENTS\\
+  \newenvironment{introduction}{%
+%      \titlepage
+%      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+	\begin{singlespace}%
+	\introductionname\\
+%	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
+%        \bfseries \abstractname
+%        \@endparpenalty\@M
+	\end{singlespace}
+      \end{center}}%
+     {\par\vfil\null\newpage}
 
-%\vspace{\baselineskip}
-%Remove the extra space according to the Grad school 2014
-%\vspace{\baselineskip}
-
-%\end{singlespace}
-%\end{centering}
-
-%#1
-
-%\newpage
-%}
-
-%\newenvironment{publications}
-%{
-%  \newpage
-%  \begin{singlespace}
-%  \newcommand*{\refname}{
-%    PUBLICATIONS
-%    \vspace{\baselineskip}
-%    \vspace{\baselineskip}
-%  }
-%  \begin{thebibliography}{99}
-%}
-%{
-%\end{thebibliography}
-%\end{singlespace}
-%\newcommand*{\refname}{
-%REFERENCES
-%\vspace{\baselineskip}
-%\vspace{\baselineskip}
-%}
-%}
-
-\newcommand{\pubitem}[1]{\bibitem{} #1}
-
-% The following commands will be used for formatting the bibliography.
-%\renewcommand*{\refname}{
-%REFERENCES
-%\vspace{2ex}
-%\vspace{\baselineskip}
-%}
-
-
-% Redefines the title of the bibliography.
-%\newcommand{\startbibliography}{\begin{thebibliography}{999}
-%\addcontentsline{toc}{chapter}{\bibname}}
-%\newcommand{\finishbibliography}{\end{thebibliography}}
-
-\newcommand{\startbib}{
-\newpage
-\begin{singlespace}
-\addcontentsline{toc}{chapter}{\bibname}
-%\bibliographystyle{abbrv}
-}
-
-\newcommand{\finishbib}{
-\end{singlespace}
-}
-
-
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS (required)
+% Page Numbering (continue with lower-case Roman numerals)
+%
+% The Table of Contents of the thesis or dissertation lists all sections following it, 
+% including the List of Tables and List of Figures, if used, and all the headings and 
+% subheadings exactly as they appear in the text. Nothing that precedes the Table of 
+% Contents should be listed.
+%  a. This page should bear the title: TABLE OF CONTENTS centered 1" from the top of the page.
+%  b. Skip two single spaced lines.
+%  c. On the third single spaced line below the words TABLE OF CONTENTS, list the first 
+%     entry. The entries are double spaced.
+%  d. This page is numbered with a small Roman numeral placed ¾” from the top of the 
+%     paper and 1" from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This redefines the table of contents title.
 \renewcommand*{\contentsname}{TABLE OF CONTENTS}
 
-\renewcommand*{\listtablename}{LIST OF TABLES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF TABLES}}
-\renewcommand*{\listfigurename}{LIST OF FIGURES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF FIGURES}}
+\titleclass{\subsubsubsection}{straight}[\subsubsection]
+\newcounter{subsubsubsection}
+\renewcommand{\thesubsubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{subsubsubsection}}
 
+% This line decides how deep the Table of Contents will go.  
+% A tocdepth of 1 means it will only show chapters and sections.
+% You can increase it if you want your Table of Contents to show 
+% subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
+\setcounter{tocdepth}{2}
 
-
-% The following 2 commands come from titlesec package.
-% titleformat formats the chapter sectioning command.
-% titlespacing formats the spacing for chapters (spacing above and below chapter titles).
-% Note: these commands will format the toc and reference pages because they get displayed as
-% if they were chapters by default. Appendix chapters will also use the chapter formatting.
-% For body chapters, a new titleclass is made that has its own formatting.
-
-\titleformat{\chapter}[block]{\normalfont\mdseries\centering}
-{\MakeUppercase{\chaptertitlename} \thechapter :}
-{.25em}{\MakeUppercase\mdseries}[\thispagestyle{myheadings} % yes page number
-\setcounter{section}{0} \setcounter{subsection}{0}
-\setcounter{subsubsection}{0}
-\setcounter{subsubsubsection}{0}
-\addtocontents{lof}{\vspace*{-10pt}}
-\addtocontents{lot}{\vspace*{-10pt}}
-]
-
-\titlespacing{\chapter}{0pt}{-0.375in}{.1875in}
-
-%\titleformat{\appendix}[block]{\normalfont\mdseries\centering}
-%{\MakeUppercase{\appendixtitlename} \theappendix :}
-%{.25em}{\MakeUppercase\mdseries}[\thispagestyle{myheadings} % yes page number
-%\setcounter{section}{0} \setcounter{subsection}{0}
-%\setcounter{subsubsection}{0}
-%\setcounter{subsubsubsection}{0}
-%\addtocontents{lof}{\vspace*{-10pt}}
-%\addtocontents{lot}{\vspace*{-10pt}}
-%]
-
-%\titlespacing{\appendix}{0pt}{-0.375in}{.1875in}
-
-% Parameter -.25in isneeded to reduce the 1.25in space from top edge
-% of paper to chapter title that alreadyexists to make space = 1in.
-%\titleformat{\bodysection}[block]{\normalfont\mdseries\centering}
-%{\thebodysection}
-%{1.5em}{\normalfont\mdseries}[\setcounter{bodysubsection}
-%{0}\setcounter{bodysubsubsection}{0}\setcounter{bodysubsubsubsection}{0}] %\setfigurecounters]
-%\titlespacing{\bodysection}{0pt}{.0625in}{.0625in}
-
-% Format \bodysubsection command
-%\titleformat{\bodysubsection}[block]{\normalfont\mdseries\centering}
-%{\thebodysubsection}
-%{1.5em}{\normalfont\mdseries}
-%[\setcounter{bodysubsubsection}{0}\setcounter{bodysubsubsubsection}{0}] %\setfigurecounters]
-%\titlespacing{\bodysubsection}{0pt}{.0625in}{.0625in}
-
-% Format \bodysubsubsection command
-%\titleformat{\bodysubsubsection}[block]{\normalfont\mdseries\centering}
-%{\thebodysubsubsection}
-%{1.5em}{\normalfont\mdseries}[\setcounter{bodysubsubsubsection}{0}] %[\setfigurecounters]
-%\titlespacing{\bodysubsubsection}{0pt}{.0625in}{.0625in}
-
-% Format \section command
-\titleformat{\section}[block]{\normalfont\mdseries\centering}
-{\thesection}
-{1.5em}{\normalfont\mdseries}[\setcounter{subsection}{0}
-\setcounter{subsubsection}{0}\setcounter{subsubsubsection}{0}]
-\titlespacing{\section}{0pt}{.0625in}{.0625in}
-
-% Format \subsection command
-\titleformat{\subsection}[block]{\normalfont\mdseries\centering}
-{\thesubsection}
-{1.5em}{\normalfont\mdseries}[\setcounter{subsubsection}{0}
-\setcounter{subsubsubsection}{0}]
-\titlespacing{\subsection}{0pt}{.0625in}{.0625in}
-
-% Format \subsubsection command
-\titleformat{\subsubsection}[block]{\normalfont\mdseries\centering}
-{\thesubsubsection}
-{1.5em}{\normalfont\mdseries}[\setcounter{subsubsubsection}{0}]
-\titlespacing{\subsubsection}{0pt}{.0625in}{.0625in}
-
-% Format \subsubsubsection command
-\titleformat{\subsubsubsection}[block]{\normalfont\mdseries\centering}
-{\thesubsubsubsection}
-{1.5em}{\normalfont\mdseries}
-\titlespacing{\subsubsubsection}{0pt}{.0625in}{.0625in}
-
-% This macro is used to increment the chapter counter and resetcounters associated with figures, tables,
-% and equations. This is necessary because titleclass \bodychapter isused to generate new chapters instead
-% of the standard \chapter command (which would do these things automatically). This macro will be used
-% in the formatting of \bodychapter command to allow figures, tables, and equations to be numbered correctly.
-
-\newcommand{\setfigurecounters}{\addtocounter{chapter}{1}
-\setcounter{figure}{0} \setcounter{table}{0}
-\setcounter{equation}{0}}
-
-% Format the new titleclass \bodychapter
-%\titleformat{\bodychapter}[block]{\normalfont\mdseries\centering\singlespacing}
-%{\bodychaptertitlename ~\thebodychapter :}
-% The first line removes page numbers on the first page of a new chapter. The second line displays them. UNCC hasn't made up their mind on this, so you might have to change it.
-%{.25em}{\normalfont\mdseries\MakeUppercase}[\thispagestyle{empty} % no page number
-%%{.25em}{\normalfont\mdseries\MakeUppercase}[\thispagestyle{myheadings} % yes page number
-%\setcounter{bodysection}{0} \setcounter{bodysubsection}{0}
-%\setcounter{bodysubsubsection}{0}
-%\setcounter{bodysubsubsubsection}{0}
-%\addtocontents{lof}{\vspace*{-10pt}}
-%\addtocontents{lot}{\vspace*{-10pt}}
-%]
-
-%\titlespacing{\bodychapter}{0pt}{.575in}{.1875in}
-%%\titlespacing{\bodychapter}{0pt}{0.625in}{.1875in}
-% Parameter .75in is needed to increase the 1.25in space from top edge
-% of paper to chapter title that already exists to make space = 2in.
-
-% Format \bodysection command
-%\titleformat{\bodysection}[block]{\normalfont\mdseries\centering}
-%{\thebodysection}
-%{1.5em}{\normalfont\mdseries}[\setcounter{bodysubsection}
-%{0}\setcounter{bodysubsubsection}{0}\setcounter{bodysubsubsubsection}{0}] %\setfigurecounters]
-%\titlespacing{\bodysection}{0pt}{.0625in}{.0625in}
-
-% Format \bodysubsection command
-%\titleformat{\bodysubsection}[block]{\normalfont\mdseries\centering}
-%{\thebodysubsection}
-%{1.5em}{\normalfont\mdseries}
-%[\setcounter{bodysubsubsection}{0}\setcounter{bodysubsubsubsection}{0}] %\setfigurecounters]
-%\titlespacing{\bodysubsection}{0pt}{.0625in}{.0625in}
-
-% Format \bodysubsubsection command
-%\titleformat{\bodysubsubsection}[block]{\normalfont\mdseries\centering}
-%{\thebodysubsubsection}
-%{1.5em}{\normalfont\mdseries}[\setcounter{bodysubsubsubsection}{0}] %[\setfigurecounters]
-%\titlespacing{\bodysubsubsection}{0pt}{.0625in}{.0625in}
-
-% Format \bodysubsubsubsection command
-%\titleformat{\bodysubsubsubsection}[block]{\normalfont\mdseries\centering}
-%{\thebodysubsubsubsection}
-%{1.5em}{\normalfont\mdseries} %[\setfigurecounters]
-%\titlespacing{\bodysubsubsubsection}{0pt}{.0625in}{.0625in}
+% Increase the section number depth and the toc depth (the depth ofsections which get numbered
+% and put in the table of contents). This is necessary to allow thenew titleclasses to be
+% numbered correctly and put in the toc.
+\setcounter{secnumdepth}{5}
 
 % The following commands format the table of contents (from titletoc package).
 % Note: the toc formatting for chapter below will be used for formatting the
@@ -671,14 +601,9 @@ ALL RIGHTS RESERVED
 % in order to get the correct name for appendix chapters. References still
 % comes out correctly because \addcontentsline{toc}{chapter}{\bibname} was
 % used for putting the title `REFERENCES' in the toc.
-
 \titlecontents{chapter}[0pt]{\normalfont\mdseries}
 {\MakeUppercase{\chaptertitlename} \thecontentslabel :\hspace{.25em}}
 {}{\titlerule*[1pc]{}\contentspage}
-
-%\titlecontents{appendix}[0pt]{\normalfont\mdseries}
-%{\MakeUppercase{\appendixtitlename} \thecontentslabel :\hspace{.25em}}
-%{}{\titlerule*[1pc]{}\contentspage}
 
 \titlecontents{section}[4em]{}{\contentslabel{2.3em}}{}
 {\titlerule*[1pc]{.}\contentspage}
@@ -713,68 +638,258 @@ ALL RIGHTS RESERVED
 \uncctocformat{figure}{0pt}{350pt}{\figuretitlename~\thecontentslabel:~}
 \uncctocformat{table}{0pt}{350pt}{\tabletitlename~\thecontentslabel:~}
 
-% Commands to allow enumerate environment to be used with correct  spacing for uncc requirements.
-\setlength{\parindent}{.17in} % Set the paragraph's indent to match the indent of the enumerate environment.
-\newcommand{\startenum}{\begin{enumerate}}
-\newcommand{\finishenum}{\ifthenelse{\value{enumii} = 0} % Check if in 1st level nesting.
-{\vspace{-7pt} \end{enumerate}} % 1st level nesting, reduce vertical space by 7pt.
-% before \end{enumerate}.
-{\ifthenelse{\value{enumiii} = 0} % Not in 1st level, check if in 2nd level.
-{\vspace{-2pt} \end{enumerate}} % 2nd level nesting, reduce vertical space by 2pt.
-% before \end{enumerate}.
-{\end{enumerate}} % Not in 2nd level nesting, no reduction of vertical space needed
-% before \end{enumerate}.
-} %end Not in 1st level.
-} %end \finishenum
-\newcommand{\enumitem}{\ifthenelse{\value{enumii} = 0} % Check if in 1st level nesting.
-{\vspace{-7pt} \item} % 1st level nesting, reduce vertical space by 7pt. before \item.
-{\ifthenelse{\value{enumiii} = 0} % Not in 1st level, check if in 2nd level.
-{\vspace{-2pt} \item} % 2nd level nesting, reduce vertical space by 2pt. before \item.
-{\item} % Not in 2nd level nesting, no reduction of vertical space needed before \item.
-} %end Not in 1st level.
-} %end \enumitem
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p9) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF TABLES (optional)
+% Page Numbering (continue with lower-case Roman numerals)
+% LIST OF FIGURES (optional)
+% Page Numbering (continue with lower-case Roman numerals)
+% LIST OF SYMBOLS/ABBREVIATIONS (optional)
+% Page Numbering (continue with lower-case Roman numerals)
+%
+% If there are any tables or figures appearing in the thesis or dissertation, lists of 
+% these may be included. The descriptive titles in these lists must be identical with those
+% in the text, but only the titles and not the explanatory notes, should be included. Each list
+% appears on a separate page. See examples at the end of this guide.
+% When many abbreviations or symbols are used, a separate List of Symbols or List of 
+% Abbreviations may be included for the sake of clarity.
+%  a. The titles LIST OF TABLES, LIST OF FIGURES, or LIST OF ABBREVIATIONS are in capital 
+%     letters and centered 1" from the top of the page.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the heading, list the first entry. The entries 
+%     are double spaced.
+%  d. These pages are numbered with a small Roman numeral placed 0.75" from the top of the
+%     paper and 1" from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p9) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\vspace*{-10pt}}
+\addtocontents{lof}{\vspace*{-30pt}}
+\addtocontents{lot}{\vspace*{-30pt}}
+\renewcommand*{\listtablename}{LIST OF TABLES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF TABLES}}
+\renewcommand*{\listfigurename}{LIST OF FIGURES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF FIGURES}}
 
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p9-11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THESIS TEXT (required)
+% Page Numbering (Arabic numerals (1,2,3,4,...) starting at 1)
+%
+% The organization and format of the text should be appropriate to the nature and scope of
+% the research reported. The text must show logical organization; generally, the text
+% includes an introduction or preface, a clear statement of the objectives, an appropriate
+% review of previous research, a description of the materials and methods used in the research,
+% a record of the results obtained, interpretive discussion of results in light of other
+% research, and a summary of the significant findings of the study. Recommendations for future
+% lines of study should also be included.
+%
+% For theses and dissertations of great complexity involving extensive cross-referencing and
+% multiple subheadings, a decimal type of organization is suggested. If the decimal system is
+% used for major and minor divisions of the thesis, it must be used throughout the entire 
+% thesis or dissertation, including the appendices. It must also be used for numbering 
+% equations, tables and figures. Once a suitable system of subdivision is selected, it should
+% be followed consistently throughout the document; combinations of the decimal and the
+% conventional or non-decimal systems are not acceptable. (See example in Table of Contents sample.)
+%
+% NOTE: Organizing the thesis or dissertation into chapters is not a Graduate School requirement;
+% however, if you do separate the text into chapters, there is a specific format for the title
+% (heading) of each chapter. See sample pages for examples. Either format is acceptable but be
+% certain to apply one or the other consistently throughout your document.
+%
+% Format for chapter headings:
+%  a. The first page of each chapter must have a heading that is capitalized and centered 
+%     with a 2" top margin. The first page of each chapter is counted but the page number is omitted.
+%  b. Skip two single spaced lines.
+%  c. On the third single spaced line below the chapter heading, begin the text. The text is 
+%     double spaced throughout. The only exceptions are noted within this manual.
+%  d. Subsequent pages of the chapter have 1” top margins; page numbers in the text should 
+%     be placed 0.75” from the top of the paper and 1" from the right edge of the paper.
+% If chapters are not used but the text is still separated into sections (e.g., Introduction,
+% Materials and Methods, Results, Discussion), each new section must have a heading using 
+% the format below:
+%
+% Format for non-chapter headings:
+%  a. Non-chapter headings should be capitalized and centered with a 1" top margin. The page is counted AND numbered.
+%  b. Page numbers should be placed ¾" from the top of the paper and 1" from the right edge of the paper.
+%  c. Skip 2 single spaced lines.
+%  d. On the 3rd single spaced line below the heading, begin the text. The text is double spaced.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p9-11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\chaptertitlename}{CHAPTER}
+\newcommand{\figuretitlename}{FIGURE}
+\newcommand{\tabletitlename}{TABLE}
 
-% Command to place adequate space between a figure or table and preceding body text of the document.
-\newcommand{\tablespace}{\vspace{10pt}}
-
-% Command to place adequate space between a figure or table and its caption.
-\newcommand{\captionspace}{\vspace{-10pt}}
-
-
-%Get LaTeX to Double-Space
-%DOSINGLE Comment next line out  to single space for review purposes
-\renewcommand{\baselinestretch}{2}
-
-
-\newcommand{\startprelim}{
-
-\pagenumbering{roman}
-
+% Thesis body format for chapter titles
+% All chapters in the thesis text must be capitalized and centered 
+% all titles have a 2" top margin and are followed by 2 blank vertical lines before start of text
+% the page number is omitted on chapter pages in the thesis text.
+\newcommand{\bodychapterformat} {
+\titlespacing{\chapter}{0pt}{0.575in}{.1875in} 
+\titleformat{\chapter}[block]{\normalfont\mdseries\centering}
+{\MakeUppercase{\chaptertitlename} \thechapter :}
+{.25em}{\MakeUppercase\mdseries}[
+%\thispagestyle{myheadings} % uncomment if you want a page number on these chapter pages
+\thispagestyle{empty} % uncomment if you dont want a page number on these chapter pages
+\setcounter{section}{0} \setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{subsubsubsection}{0}
+]
 }
 
-\newcommand{\listofcontentsfigurestables}{
-\let\cleardoublepage\clearpage
-\lefthyphenmin=2
-\righthyphenmin=3
-%\newpage
-%\vspace*{-32pt}
-\let\cleardoublepage\clearpage
-\tableofcontents
-%\newpage
-%\vspace*{-32pt}
-%\let\cleardoublepage\clearpage
-\listoffigures
-%\newpage
-%\vspace*{-32pt}
-%\let\cleardoublepage\clearpage
-\listoftables
+% frontmatter and backmatter format for chapter titles
+% Frontmatter titles include ABSTRACT/ACKNOWLEDGEMENTS/INTRODUCTION page titles
+% Backmatter titles include REFERENCES/BIBLIOGRAPHY/APPENDIX/VITA page titles
+% all titles have a 1" top margin and are followed by 2 blank vertical lines before start of text
+% there should be a page number on all of these pages
+\newcommand{\fbmatterchapterformat} {
+\titlespacing{\chapter}{0pt}{-0.375in}{.1875in} 
+\titleformat{\chapter}[block]{\normalfont\mdseries\centering}
+{\MakeUppercase{\chaptertitlename} \thechapter :}
+{.25em}{\MakeUppercase\mdseries}[
+\thispagestyle{myheadings} % uncomment if you want a page number on these chapter pages
+%\thispagestyle{empty} % uncomment if you dont want a page number on these chapter pages
+\setcounter{section}{0} \setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{subsubsubsection}{0}
+]
 }
 
-\newcommand{\startbody}{
+% spacing around chapter headings are below
+% the four measurements are the left, upper and lower spacing around the heading
+% Parameter -.25in isneeded to reduce the 1.25in space from top edge
+% of paper to chapter title that alreadyexists to make space = 1in.
+%\titlespacing{\chapter}{0pt}{-0.375in}{.1875in}
+%\titlespacing{\chapter}{0pt}{0.575in}{.1875in}
+%%\titlespacing{\chapter}{0pt}{0.625in}{.1875in}
+% Parameter .75in is needed to increase the 1.25in space from top edge
+% of paper to chapter title that already exists to make space = 2in.
 
-\newpage
-\setcounter{page}{1}
-\pagenumbering{arabic}
+% Format \section command
+\titleformat{\section}[block]{\normalfont\mdseries\centering}
+{\thesection}
+{1.5em}{\normalfont\mdseries}[\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}\setcounter{subsubsubsection}{0}]
+\titlespacing{\section}{0pt}{.0625in}{.0625in}
 
-} 
+% Format \subsection command
+\titleformat{\subsection}[block]{\normalfont\mdseries\centering}
+{\thesubsection}
+{1.5em}{\normalfont\mdseries}[\setcounter{subsubsection}{0}
+\setcounter{subsubsubsection}{0}]
+\titlespacing{\subsection}{0pt}{.0625in}{.0625in}
+
+% Format \subsubsection command
+\titleformat{\subsubsection}[block]{\normalfont\mdseries\centering}
+{\thesubsubsection}
+{1.5em}{\normalfont\mdseries}[\setcounter{subsubsubsection}{0}]
+\titlespacing{\subsubsection}{0pt}{.0625in}{.0625in}
+
+% Format \subsubsubsection command
+\titleformat{\subsubsubsection}[block]{\normalfont\mdseries\centering}
+{\thesubsubsubsection}
+{1.5em}{\normalfont\mdseries}
+\titlespacing{\subsubsubsection}{0pt}{.0625in}{.0625in}
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES/BIBLIOGRAPHY (required)
+% Page Numbering (Arabic numerals (1,2,3,4,...) starting at 1)
+%
+% The thesis or dissertation must include a separate REFERENCES or BIBLIOGRAPHY section.
+% The format of this section must adhere to the following:
+%  a. The heading of REFERENCES or BIBLIOGRAPHY should be capitalized and centered with 
+%     a 1" top margin.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the heading, type the first entry.
+%  d. All entries are to be single spaced with a double space between entries.
+%  e. Pages are numbered with Arabic numerals placed ¾” from the top of the paper and 1" 
+%     from the right edge of the paper.
+%
+% NOTE: The term Bibliography or References should be used consistently throughout the
+% thesis or dissertation. That is, do not list it in the table of contents as Bibliography
+% and then title it in the body of the text as References.
+%
+% The form used for literature citation within the REFERENCES or BIBLIOGRAPHY section of
+% the thesis or dissertation should be determined by the style manual selected by the
+% discipline for which the research is written or by your advisory committee.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\bibname}{REFERENCES}
+% un-comment if you want your references section to be titled BIBLIOGRAPHY
+%\renewcommand{\bibname}{BIBLIOGRAPHY}
+
+\renewenvironment{thebibliography}[1]
+     {\chapter*{\bibname}%
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \addcontentsline{toc}{chapter}{\bibname} % NEW added TOC entry
+      \singlespace                             % NEW singlespacing start
+      \vspace{-2pt}                            % NEW adjust space under chapter title
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+      \doublespace				% NEW doublespacing start
+
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p11-12) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDICES (optional)
+% Page Numbering (Arabic numerals (1,2,3,4,...) starting at 1)
+%
+% The appendices should be used for whatever material you or your advisory committee believes
+% should be included, but would not be appropriate in the text of the thesis or dissertation.
+% Such materials can include:
+%  a. the original data obtained in the thesis or dissertation research, including computer 
+%     programs and printouts, surveys, or correspondence;
+%  b. detailed descriptions of procedures, which go beyond the general outline of methods and
+%     approaches presented in the text;
+%  c. a particularly extensive review of the literature and other information that may be 
+%     useful to future scholars who may wish to delve more deeply into the research topic.
+% If there is more than one appendix, appendices should be defined both by letters and titles, 
+% (Example: APPENDIX A: CONSENT FORM).
+%  a. Appendices must be listed in the table of contents and numbered consecutively following
+%     the bibliography/reference pages.
+%  b. The title should be capitalized and centered with a 1" top margin.
+%  c. Skip two single spaced lines.
+%  d. On the third single spaced line below the heading, type the first entry.
+%  e. Pages are numbered with Arabic numerals placed 0.75” from the top of the paper and 1" 
+%     from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p11-12) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\appendixname}{APPENDIX}
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p11-12) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VITA (optional)
+% Page Numbering (Arabic numerals (1,2,3,4,...) starting at 1)
+%
+% The thesis or dissertation may conclude with a biographical sketch of the author. The sketch
+% should be written in the third person and should indicate birth date and birthplace, where
+% the author earned the bachelor’s degree and if applicable the master’s degree, professional 
+% societies to which the authors belongs, and other professional activities.
+%  a. The word VITA is capitalized and centered with a 1" top margin.
+%  b. Skip two single spaced lines.
+%  c. On the third single spaced line below the heading, begin the text.
+%  d. Pages are numbered with Arabic numerals
+%     placed 0.75” from the top of the paper and 1" from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p11-12) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\vitaname{VITA}
+
+  \newenvironment{vita}{%
+%      \titlepage
+%      \null\vfil
+      \newpage
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+	\begin{singlespace}%
+	\vitaname\\
+%	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
+%        \bfseries \abstractname
+%        \@endparpenalty\@M
+	\end{singlespace}
+      \end{center}}%
+     {\par\vfil\null\newpage}
+

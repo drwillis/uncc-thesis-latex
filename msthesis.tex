@@ -5,9 +5,14 @@
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
 \usepackage{array}
+\usepackage{verbatim}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{setspace}
+\usepackage{nomencl}
+% the following is useful when we have the old nomencl.sty package
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
 
 \makeatletter
 
@@ -15,28 +20,14 @@
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-%    \usepackage{mdframed}
-%    \usepackage{xcolor}
-%    \newenvironment{myquotation}
-%      {\begin{mdframed}[linecolor=red]\quotation}
-%      {\endquotation\end{mdframed}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-% This line decides how deep the Table of Contents will go.  
-% A tocdepth of 1 means it will only show chapters and sections.
-% You can increase it if you want your Table of Contents to show 
-% subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
-\setcounter{tocdepth}{2}
-
 \@ifundefined{showcaptionsetup}{}{%
  \PassOptionsToPackage{caption=false}{subfig}}
 \usepackage{subfig}
 \makeatother
 
 \begin{document}
-\startprelim
-
+\pagenumbering{roman}
+\fbmatterchapterformat
 % Doctype should be either dissertation proposal, dissertation, or thesis.
 % If you're getting a master's, use "thesis."  If you're getting a PhD, use "dissertation."
 
@@ -69,20 +60,56 @@
 \begin{abstract}
 Content of your abstract goes here.\end{abstract}
 \begin{acknowledgements}
-Your acknowledgements go here.
-\end{acknowledgements}
-\listofcontentsfigurestables
+Your acknowledgements go here.\end{acknowledgements}
+\begin{dedication}
+If you decide to have a dedication. Your dedication would go here.\end{dedication}
+\begin{introduction}
+If you decide to have an introduction. Your introduction would go
+here. 
+\end{introduction}
+\tableofcontents{}
 
-\startbody
+\listoffigures
+
+
+\listoftables
+
+
+\renewcommand{\nomname}{LIST OF ABBREVIATIONS}
+% uncomment line below to title your nomenclature list as LIST OF SYMBOLS
+%\renewcommand{\nomname}{LIST OF SYMBOLS}
+\addcontentsline{toc}{chapter}{\nomname}\settowidth{\nomlabelwidth}{GNU}
+\printnomenclature{}
+
+\nomenclature{GNU}{GNU is not UNIX.}
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+% 2 inch top spacing for new chapters
+\bodychapterformat
 
 
 % Write chapter titles in ALL CAPS.
 
 
+\begin{comment}
+UNC Charlotte Guidelines 2014: Thesis Text (p4)
+
+Do not use bold, underline or create unusual fonts for chapter titles;
+do not use running headers or footers. Do not use bold, underline
+or italics for headings, subheadings, etc. Changes in font style or
+typeface are not permitted except for inclusion of illustrative or
+documentary materials such as computer printouts or if required for
+mathematical expressions. If you are unsure about the acceptability
+of the typeface you want to use for your final copy of the thesis
+or dissertation, please verify with the thesis/dissertation reviewer
+in the Graduate School that it can be used.
+\end{comment}
+
+
 
 \chapter{INTRODUCTION}
-
-\pagenumbering{arabic}
 
 This is my introduction. GNU is a major free software advocate \cite{gpl}.
 
@@ -153,20 +180,16 @@ severity.}
 \end{figure}
 
 
-\begin{doublespace}
 
 \chapter{CONCLUSIONS}
-\end{doublespace}
 
 Lots of interesting conclusions will be put here.
 
-\startbib
+\fbmatterchapterformat
 
 \bibliographystyle{plain}
 \bibliography{references_db}
 
-
-\finishbib 
 
 \newpage{}\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
 \renewcommand{\chaptertitlename}{APPENDIX} 
@@ -181,4 +204,8 @@ Test of appendices.
 \section{Section in appendix}
 
 This is a section in the appendix.
+\begin{vita}
+If you want to include a vita, i.e., a biosketch about yourself. You
+would include it here.\end{vita}
+
 \end{document}
