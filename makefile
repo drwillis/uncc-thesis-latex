@@ -10,7 +10,13 @@ all: $(pdf)
 %.pdf: %.tex
 	pdflatex $< 
 	bibtex $(patsubst %.tex,%.aux,$<)
+	NLOFILE=$(patsubst %.tex,%.nlo,$<)
+ifneq ("$(wildcard $(NLOFILE))","")
+#	echo "No LIST OF ABBREVIATIONS/SYMBOLS nlo nomenclature file not found."
+else 
+#	echo "A LIST OF ABBREVIATIONS/SYMBOLS has been found. Running makeindex."
 	makeindex $(patsubst %.tex,%.nlo,$<)  -s nomencl.ist -o $(patsubst %.tex,%.nls,$<)
+endif
 	pdflatex $<
 	pdflatex $<
 
