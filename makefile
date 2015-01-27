@@ -10,12 +10,13 @@ all: $(pdf)
 %.pdf: %.tex
 	pdflatex $< 
 	bibtex $(patsubst %.tex,%.aux,$<)
+	makeindex $(patsubst %.tex,%.nlo,$<)  -s nomencl.ist -o $(patsubst %.tex,%.nls,$<)
 	pdflatex $<
 	pdflatex $<
 
 clean: 
 	rm -rf *.aux *.log *.bbl *.blg *.brf *.cb *.ind *.idx *.ilg	\
-				*.inx *.toc *.lof *.lot *.out *~
+				*.inx *.toc *.lof *.lot *.out *.nlo *.nls *~
 
 
 

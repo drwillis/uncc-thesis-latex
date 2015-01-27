@@ -317,6 +317,13 @@ status open
 
 
 \backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 renewcommand{
 \backslash
 nomname}{LIST OF ABBREVIATIONS}
