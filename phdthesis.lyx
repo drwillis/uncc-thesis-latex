@@ -455,19 +455,6 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 INTRODUCTION
 \end_layout
@@ -1316,7 +1303,41 @@ thecontentslabel:~}
 \backslash
 renewcommand{
 \backslash
-chaptertitlename}{APPENDIX} 
+chaptertitlename}{APPENDIX}
+\end_layout
+
+\begin_layout Plain Layout
+
+% The default setting for appendices excludes sections, subsections, etc.
+ from
+\end_layout
+
+\begin_layout Plain Layout
+
+% the TABLE OF CONTENTS.
+\end_layout
+
+\begin_layout Plain Layout
+
+% If you want these in the TABLE OF CONTENTS, increase the number in the
+ line below:
+\end_layout
+
+\begin_layout Plain Layout
+
+% 1 - Appendices, Sections / 2 - Appendices, Sections, Subsections / 3 -
+ etc 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocontents{toc}{
+\backslash
+protect
+\backslash
+setcounter{tocdepth}{0}}
 \end_layout
 
 \end_inset

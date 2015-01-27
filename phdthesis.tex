@@ -5,7 +5,6 @@
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
 \usepackage{array}
-\usepackage{verbatim}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{nomencl}
@@ -100,7 +99,7 @@ page.
 \addcontentsline{toc}{chapter}{\nomname}\settowidth{\nomlabelwidth}{GNU}
 \printnomenclature{}
 
-\nomenclature{GNU}{GNU is not UNIX.}
+\nomenclature{GNU}{GNU is a recursive acronym for "GNU is not Unix!"}
 
 \newpage
 \setcounter{page}{1}
@@ -110,10 +109,6 @@ page.
 
 
 % Write chapter titles in ALL CAPS.
-
-
-\begin{comment}
-\end{comment}
 
 
 
@@ -224,7 +219,12 @@ Lots of interesting conclusions will be put here.
 
 
 \newpage{}\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
-\renewcommand{\chaptertitlename}{APPENDIX} 
+\renewcommand{\chaptertitlename}{APPENDIX}
+% The default setting for appendices excludes sections, subsections, etc. from
+% the TABLE OF CONTENTS.
+% If you want these in the TABLE OF CONTENTS, increase the number in the line below:
+% 1 - Appendices, Sections / 2 - Appendices, Sections, Subsections / 3 - etc 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 \appendix
 
