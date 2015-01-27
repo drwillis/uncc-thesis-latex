@@ -31,11 +31,15 @@
 % If you're getting a master's, specify "thesis" below.  
 % If you're getting a PhD, specify "dissertation" below.
 \doctype{dissertation}
-
-
-% Note: Only the first letter of the entire title should be capitalized to allow the 
-% title to appear as required by the graduate school in the Abstract page.
-\title{My LyX Thesis}
+%%%%%%%%%%%%%%%%     IMPORTANT! IMPORTANT! IMPORTANT! %%%%%%%%%%%%%%%%
+% The rules below MUST be followed for the abstract page and chapter titles
+% to be correctly formatted.
+%
+% 1. Only the first letter of the entire title should be capitalized to allow the 
+%    title to appear as required by the graduate school on the Abstract page.
+% 2. Write chapter titles in ALL CAPS.
+%
+\title{My lyx dissertation}
 \author{Test User}
 \degree{Doctor of Philosophy}
 \major{Electrical Engineering}
@@ -108,7 +112,7 @@ page.
 \bodychapterformat
 
 
-% Write chapter titles in ALL CAPS.
+
 
 
 
@@ -220,10 +224,12 @@ Lots of interesting conclusions will be put here.
 
 \newpage{}\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
 \renewcommand{\chaptertitlename}{APPENDIX}
+%
 % The default setting for appendices excludes sections, subsections, etc. from
 % the TABLE OF CONTENTS.
 % If you want these in the TABLE OF CONTENTS, increase the number in the line below:
 % 1 - Appendices, Sections / 2 - Appendices, Sections, Subsections / 3 - etc 
+%
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 \appendix

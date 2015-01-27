@@ -103,33 +103,53 @@ doctype{thesis}
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% Note: Only the first letter of the entire title should be capitalized
- to allow the 
+%%%%%%%%%%%%%%%%     IMPORTANT! IMPORTANT! IMPORTANT! %%%%%%%%%%%%%%%%
 \end_layout
 
 \begin_layout Plain Layout
 
-% title to appear as required by the graduate school in the Abstract page.
+% The rules below MUST be followed for the abstract page and chapter titles
+\end_layout
+
+\begin_layout Plain Layout
+
+% to be correctly formatted.
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% 1.
+ Only the first letter of the entire title should be capitalized to allow
+ the 
+\end_layout
+
+\begin_layout Plain Layout
+
+%    title to appear as required by the graduate school on the Abstract
+ page.
+\end_layout
+
+\begin_layout Plain Layout
+
+% 2.
+ Write chapter titles in ALL CAPS.
+\end_layout
+
+\begin_layout Plain Layout
+
+%
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-title{My LyX Thesis}
+title{My lyx thesis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -426,28 +446,6 @@ pagenumbering{arabic}
 
 \backslash
 bodychapterformat
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-% Write chapter titles in ALL CAPS.
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -1309,6 +1307,11 @@ chaptertitlename}{APPENDIX}
 
 \begin_layout Plain Layout
 
+%
+\end_layout
+
+\begin_layout Plain Layout
+
 % The default setting for appendices excludes sections, subsections, etc.
  from
 \end_layout
@@ -1328,6 +1331,11 @@ chaptertitlename}{APPENDIX}
 
 % 1 - Appendices, Sections / 2 - Appendices, Sections, Subsections / 3 -
  etc 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
 \end_layout
 
 \begin_layout Plain Layout
