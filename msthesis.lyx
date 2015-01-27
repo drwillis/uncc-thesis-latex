@@ -383,8 +383,8 @@ set_width "auto"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "GNU"
-description "GNU is a recursive acronym for \"GNU is not Unix!\""
+symbol "ECE"
+description "An acronym for Electrical and Computer Engineering."
 
 \end_inset
 
