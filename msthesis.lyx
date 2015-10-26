@@ -1270,7 +1270,7 @@ fbmatterchapterformat
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "references_db"
-options "plain"
+options "ieeetr"
 
 \end_inset
 
