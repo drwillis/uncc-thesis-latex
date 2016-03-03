@@ -664,10 +664,10 @@ ALL RIGHTS RESERVED
 %     paper and 1" from the right edge of the paper.
 %%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p9) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\vspace*{-10pt}}
-\addtocontents{lof}{\vspace*{-30pt}}
-\addtocontents{lot}{\vspace*{-30pt}}
-\renewcommand*{\listtablename}{LIST OF TABLES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF TABLES}}
-\renewcommand*{\listfigurename}{LIST OF FIGURES \vspace*{2ex}\addcontentsline{toc}{chapter}{LIST OF FIGURES}}
+\addtocontents{lof}{\protect\renewcommand*\protect\addvspace[1]{}\vspace*{-30pt}}
+\addtocontents{lot}{\protect\renewcommand*\protect\addvspace[1]{}\vspace*{-30pt}}
+\renewcommand*{\listtablename}{LIST OF TABLES \vspace*{4ex}\addcontentsline{toc}{chapter}{LIST OF TABLES}}
+\renewcommand*{\listfigurename}{LIST OF FIGURES \vspace*{4ex}\addcontentsline{toc}{chapter}{LIST OF FIGURES}}
 
 %%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p9-11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THESIS TEXT (required)
