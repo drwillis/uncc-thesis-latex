@@ -99,6 +99,14 @@ committee, an Introduction may be included as a preliminary page.
 \renewcommand{\nomname}{LIST OF ABBREVIATIONS}
 % uncomment line below to title your nomenclature list as LIST OF SYMBOLS
 %\renewcommand{\nomname}{LIST OF SYMBOLS}
+%
+% NOTE: IF YOU USE A LIST OF ABBREVIATIONS / LIST OF SYMBOLS and are using command-line LaTeX (not LyX) 
+% YOU MUST COMPILE THE NOMENCLATURE INDEX
+% example:
+% bash$> pdflatex msthesis.tex
+% bash$> makeindex msthesis.nlo -s nomencl.ist -o msthesis.nls
+% bash$> pdflatex msthesis.tex
+%
 \addcontentsline{toc}{chapter}{\nomname}\settowidth{\nomlabelwidth}{ECE}
 \printnomenclature{}
 

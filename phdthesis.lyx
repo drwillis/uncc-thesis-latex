@@ -381,6 +381,37 @@ nomname}{LIST OF SYMBOLS}
 
 \begin_layout Plain Layout
 
+% NOTE: IF YOU USE A LIST OF ABBREVIATIONS / LIST OF SYMBOLS and are using
+ command-line LaTeX (not LyX)
+\end_layout
+
+\begin_layout Plain Layout
+
+% YOU MUST COMPILE THE NOMENCLATURE INDEX
+\end_layout
+
+\begin_layout Plain Layout
+
+% example:
+\end_layout
+
+\begin_layout Plain Layout
+
+% bash$> pdflatex phdthesis.tex
+\end_layout
+
+\begin_layout Plain Layout
+
+% bash$> makeindex phdthesis.nlo -s nomencl.ist -o phdthesis.nls
+\end_layout
+
+\begin_layout Plain Layout
+
+% bash$> pdflatex phdthesis.tex
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 addcontentsline{toc}{chapter}{
