@@ -1,4 +1,4 @@
-%% LyX 2.0.8.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass{UNCC-thesis}
 \usepackage[T1]{fontenc}
@@ -18,6 +18,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% If you are using MikTeX on Windows and you have a nomenclature section
+% you may want to uncomment the line below.
+%
+%\immediate\write18{makeindex phdthesis.nlo -s nomencl.ist -o phdthesis.nls}
 
 \@ifundefined{showcaptionsetup}{}{%
  \PassOptionsToPackage{caption=false}{subfig}}
@@ -99,12 +105,14 @@ committee, an Introduction may be included as a preliminary page.
 \renewcommand{\nomname}{LIST OF ABBREVIATIONS}
 % uncomment line below to title your nomenclature list as LIST OF SYMBOLS
 %\renewcommand{\nomname}{LIST OF SYMBOLS}
-% NOTE: IF YOU USE A LIST OF ABBREVIATIONS / LIST OF SYMBOLS and are using command-line LaTeX (not LyX)
+%
+% NOTE: IF YOU USE A LIST OF ABBREVIATIONS / LIST OF SYMBOLS and are using command-line LaTeX (not LyX) 
 % YOU MUST COMPILE THE NOMENCLATURE INDEX
 % example:
-% bash$> pdflatex phdthesis.tex
-% bash$> makeindex phdthesis.nlo -s nomencl.ist -o phdthesis.nls
-% bash$> pdflatex phdthesis.tex
+% bash$> pdflatex msthesis.tex
+% bash$> makeindex msthesis.nlo -s nomencl.ist -o msthesis.nls
+% bash$> pdflatex msthesis.tex
+%
 \addcontentsline{toc}{chapter}{\nomname}\settowidth{\nomlabelwidth}{ECE}
 \printnomenclature{}
 
@@ -115,10 +123,6 @@ committee, an Introduction may be included as a preliminary page.
 \pagenumbering{arabic}
 % 2 inch top spacing for new chapters
 \bodychapterformat
-
-
-
-
 
 
 \chapter{INTRODUCTION}
@@ -173,7 +177,7 @@ example of a graphical figure in the document. Labeling tables and
 figures and cross-referencing these labels in your text will ensure
 that the list of figures and list of tables generated automatically
 will always be correct even when you move figures and tables to new
-locations in your document.
+locations in your document. 
 \begin{table}[H]
 \centering{}{\small{}}%
 \begin{tabular}{|>{\centering}p{1in}|>{\centering}p{1in}|>{\centering}p{1in}|}
