@@ -110,11 +110,11 @@ Style Dedication
 	EndHTMLStyle
 End
 
-Style Introduction
+Style Preface
 	Category              FrontMatter
 	Margin                Static
 	LatexType             Environment
-	LatexName             introduction
+	LatexName             preface
 	NextNoIndent          1
 	LeftMargin            MMM
 	RightMargin           MMM
@@ -126,7 +126,7 @@ Style Introduction
 	ParSep                0
 	Align                 Block
 	LabelType             Centered_Top_Environment
-	LabelString           "Introduction"
+	LabelString           "Preface"
 	LabelBottomSep        0.5
 	Font
 	  Size                Small

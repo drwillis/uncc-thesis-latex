@@ -17,11 +17,12 @@
 % (2013) Subsubsubsection added in 2013 by Andrew Besmer.
 % (2015) Significant modifications introduced and restructuring for LyX compatibility 
 %        Preserved work by Ziemkiewicz and re-wrote most other functionality - Andrew Willis, ECE 
+% (2018) Changed order of sections according to new UNCC guidelines (2017-2018) Introduction -> Preface and comes before text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % What formatting elements does this document support?
 % All elements of a UNCC thesis are supported. The thesis elements listed below are documented in the
-% 2014 UNC Charlotte Thesis formatting guidelines.
+% 2018 UNC Charlotte Thesis formatting guidelines.
 %
 % Part I: Preliminary Pages / Frontmatter
 % a) Title/Signature Page (required)
@@ -29,11 +30,11 @@
 % c) Abstract (required)
 % d) Dedication Page (optional)
 % e) Acknowledgement Page (optional)
-% f) Introduction Page (optional)
-% g) Table of Contents (required)
-% h) List of Tables (optional)
-% i) List of Figures (optional)
-% j) List of Symbols/Abbreviations (optional)
+% f) Table of Contents (required)
+% g) List of Tables (optional)
+% h) List of Figures (optional)
+% i) List of Symbols/Abbreviations (optional)
+% j) Preface (optional)
 % Part II: Thesis Text (required)
 % Part III: References/Bibliography (required)
 % Part IV: Appendices (optional) 
@@ -533,37 +534,6 @@ ALL RIGHTS RESERVED
 	\end{singlespace}
       \end{center}}%
      {\par\vfil\null\newpage}
-%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCTION (optional) 
-% Page Numbering (continue lower-case Roman numerals)
-%
-% Depending on the discipline or the requirements of the student’s advisory committee, an 
-% Introduction may be included as a preliminary page. In this case it should be included 
-% before the Table of Contents.
-%  a. The word INTRODUCTION is centered with a 1” top margin.
-%  b. Skip 2 single spaced lines.
-%  c. On the 3rd single spaced line below the word INTRODUCTION, begin the text. The text 
-%     is double spaced.
-%  d. This page is numbered with a small Roman numeral placed ¾" from the top of the paper
-%     and 1" from the right edge of the paper.
-%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand\introductionname{INTRODUCTION}
-
-  \newenvironment{introduction}{%
-%      \titlepage
-%      \null\vfil
-      \@beginparpenalty\@lowpenalty
-      \begin{center}%
-	\begin{singlespace}%
-	\introductionname\\
-%	\vspace{\baselineskip}
-%	\vspace{\baselineskip}
-%        \bfseries \abstractname
-        \@endparpenalty\@M
-	\end{singlespace}
-      \end{center}}%
-     {\par\vfil\null\newpage}
 
 %%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS (required)
@@ -668,6 +638,38 @@ ALL RIGHTS RESERVED
 \addtocontents{lot}{\protect\renewcommand*\protect\addvspace[1]{}\vspace*{-30pt}}
 \renewcommand*{\listtablename}{LIST OF TABLES \vspace*{4ex}\addcontentsline{toc}{chapter}{LIST OF TABLES}}
 \renewcommand*{\listfigurename}{LIST OF FIGURES \vspace*{4ex}\addcontentsline{toc}{chapter}{LIST OF FIGURES}}
+
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREFACE (optional) 
+% Page Numbering (continue lower-case Roman numerals)
+%
+% Depending on the discipline or the requirements of the student’s advisory committee, an 
+% Introduction may be included as a preliminary page. In this case it should be included 
+% before the main body.
+%  a. The word PREFACE is centered with a 1” top margin.
+%  b. Skip 2 single spaced lines.
+%  c. On the 3rd single spaced line below the word PREFACE, begin the text. The text 
+%     is double spaced.
+%  d. This page is numbered with a small Roman numeral placed ¾" from the top of the paper
+%     and 1" from the right edge of the paper.
+%%%%%%%%%%%%% UNC Charlotte Guidelines 2014 END (p8) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\prefacename{PREFACE}
+
+  \newenvironment{preface}{%
+%      \titlepage
+%      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+	\begin{singlespace}%
+	\prefacename\\
+%	\vspace{\baselineskip}
+%	\vspace{\baselineskip}
+%        \bfseries \abstractname
+        \@endparpenalty\@M
+	\end{singlespace}
+      \end{center}}%
+     {\par\vfil\null\newpage}
 
 %%%%%%%%%%%%% UNC Charlotte Guidelines 2014 START (p9-11) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THESIS TEXT (required)
