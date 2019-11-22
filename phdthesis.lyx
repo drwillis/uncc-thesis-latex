@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass UNCC-thesis
 \begin_preamble
 % If you are using MikTeX on Windows and you have a nomenclature section
@@ -15,16 +17,18 @@
 \language_package none
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -54,6 +58,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -62,7 +67,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -296,8 +304,8 @@ You must have an abstract.
 \end_layout
 
 \begin_layout Abstract
-The abstract is the briefest possible summary of the work and conclusions
- not exceeding one page in length.
+You should compose the abstract using the conventions of your field.
+ In many fields this section is typically 1-2 pages.
 \end_layout
 
 \begin_layout Dedication
@@ -450,6 +458,7 @@ set_width "auto"
 LatexCommand nomenclature
 symbol "ECE"
 description "An acronym for Electrical and Computer Engineering."
+literal "true"
 
 \end_inset
 
@@ -515,11 +524,13 @@ INTRODUCTION
 
 \begin_layout Standard
 This is my introduction.
- Here is an example of a citation using BiBTeX that cites the GNU project,
+ Here is an example of a citation using BiB\SpecialChar TeX
+ that cites the GNU project,
  a major force in free software advocacy 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gpl"
+literal "true"
 
 \end_inset
 
@@ -546,7 +557,7 @@ Do not use bold, underline or create unusual fonts for chapter titles; do
 
  
 \emph on
---
+–
 \begin_inset space ~
 \end_inset
 
@@ -568,7 +579,7 @@ status open
 \size small
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="5">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="1in">
 <column alignment="center" valignment="top" width="1in">
@@ -948,7 +959,7 @@ status open
 \size small
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="1in">
 <column alignment="center" valignment="top" width="1in">
 <column alignment="center" valignment="top" width="1in">
