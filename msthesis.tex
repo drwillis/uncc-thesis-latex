@@ -1,4 +1,4 @@
-%% LyX 2.3.3 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass{UNCC-thesis}
 \usepackage[T1]{fontenc}
@@ -30,10 +30,6 @@
 \usepackage{subfig}
 \makeatother
 
-\def\eqdeclaration#1{, see equation\nobreakspace(#1)}
-\def\pagedeclaration#1{, page\nobreakspace#1}
-\def\nomname{Nomenclature}
-
 \begin{document}
 \pagenumbering{roman}
 \fbmatterchapterformat
@@ -64,23 +60,21 @@
 \committeeMember{Dr. Person B}
 \committeeMember{Dr. Person C}
 
+
 % Generate the preliminary title page and copyright page.
 \maketitlepage
 \makecopyright
 \begin{abstract}
 You must have an abstract. The content of your abstract goes here. 
 
-You should compose the abstract using the conventions of your field.
-In many fields this section is typically 1-2 pages.
-\end{abstract}
+You should compose the abstract using the conventions of your field. In many fields this section is typically 1-2 pages. \end{abstract}
 \begin{dedication}
 If you decide to have a dedication page, your dedication text would
 go here.
 
 The Dedication page, if used, pays a special tribute to a person(s)
 who has given extraordinary encouragement or support to one's academic
-career.
-\end{dedication}
+career.\end{dedication}
 \begin{acknowledgements}
 If you decide to have a acknowledgements page, your acknowledgement
 text would go here.
@@ -96,7 +90,9 @@ grants, contracts, or fellowships.
 
 \listoftables
 
+
 \listoffigures
+
 
 \newpage
 \renewcommand{\nomname}{LIST OF ABBREVIATIONS}
@@ -162,10 +158,12 @@ Guidelines 2014: Thesis Text} (page 4)
 \hline 
 {\small{}12} & {\small{}15.71} & {\small{}86.89} & {\small{}74.58} & {\small{}112.03}\tabularnewline
 \hline 
-\end{tabular}{\small\par}
-\par\end{centering}
+\end{tabular}
+\par\end{centering}{\small \par}
+
 \caption{\label{tab:Table1}This is an example of a table.}
 \end{table}
+
 
 
 \section{Problem Statement}
@@ -204,17 +202,22 @@ parameters and average overall ranking and KL score.}
 \subfloat[Translational displacement vs. Savg; a linear fit ]{\begin{centering}
 \includegraphics[height=2in]{figs/TransVsKLLine}
 \par\end{centering}
+
 }
 \par\end{centering}
+
 \begin{centering}
 \subfloat[Translational displacement vs. KL; a linear fit ]{\begin{centering}
 \includegraphics[height=2in]{figs/TransVsKLLine}
 \par\end{centering}
+
 }
 \par\end{centering}
+
 \caption[Shortened figure caption for list of figures.]{\label{fig:LinearFit}Linear fitting translational displacement to
 KL and average overall severity.}
 \end{figure}
+
 
 
 \chapter{CONCLUSIONS}
@@ -226,7 +229,8 @@ Lots of interesting conclusions will be put here.
 \bibliographystyle{ieeetr}
 \bibliography{references_db}
 
-\newpage\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
+
+\newpage{}\uncctocformat{chapter}{0pt}{350pt}{\appendixname~\thecontentslabel:~}
 \renewcommand{\chaptertitlename}{APPENDIX}
 %
 % The default setting for appendices excludes sections, subsections, etc. from
